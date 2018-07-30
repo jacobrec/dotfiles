@@ -27,3 +27,7 @@ cd ~
 
 
 ln -s $DIR/tmux.conf .tmux.conf
+cd ~/.config/i3
+ln -s $DIR/i3/i3config config
+cd ~/.config
+ln -s $DIR/i3/i3blocks i3blocks

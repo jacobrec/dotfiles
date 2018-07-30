@@ -1,6 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/data/Coding/D/dnes/source/cpu'
 let g:netrw_dirhist_2='/'
 let g:netrw_dirhist_3='/data/Coding/D/dnes/source/cpu'
 let g:netrw_dirhist_4='/data/Work/clang_stuff/writeup/sections'
+let g:netrw_dirhist_5='/home/jacob/dotfiles/vim/vim'
+let g:netrw_dirhist_6='/home/jacob/dotfiles/vim/vim/vim'
+let g:netrw_dirhist_7='/home/jacob/dotfiles/vim/vim/vim/vim'
+let g:netrw_dirhist_8='/home/jacob/dotfiles/vim/vim/vim/vim/vim'

@@ -1,0 +1,81 @@
+###############################################################################
+# Jacob's i3 status config
+###############################################################################
+command=~/.config/i3blocks/scripts/$BLOCK_NAME
+separator_block_width=25
+markup=none
+
+
+[jalert]
+command=cat ~/.jacobstatusbaralertindicator.txt
+interval=1
+
+# sync wont show anything, this just ensures it gets called
+[jweather]
+command=jweather_sync
+interval=30
+
+[jweather]
+command=jweather_read
+separator=true
+interval=10
+markup=pango
+
+[cpu_usage]
+label=
+separator=true
+interval=2
+
+[memory]
+label=
+separator=false
+interval=1
+command=/usr/lib/i3blocks/memory
+color=#dfe3ee
+
+[memory]
+label=
+instance=swap
+separator=true
+interval=10
+command=/usr/lib/i3blocks/memory
+color=#7ea1a5
+
+[disk]
+label=
+instance=/
+interval=30
+separator=false
+color=#ffff00
+
+[disk]
+label=
+instance=/data
+interval=30
+separator=true
+color=#ffff00
+
+[wifi]
+label=
+instance=wlp0s58
+interval=3
+separator=false
+
+[iface]
+interval=20
+separator=true
+
+[battery]
+interval=10
+
+# Date 
+[date]
+label=
+command=date '+%A, %B %d'
+interval=3600
+
+# Date Time 
+[time]
+label=
+command=date '+%H:%M:%S'
+interval=1
