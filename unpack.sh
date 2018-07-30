@@ -15,7 +15,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null && pwd )"
 cd ~
 
 # Move vim folder to home directory
-ln -s $DIR/vim .vim
+ln -s -T $DIR/vim .vim
 
 # Move bash files to home directory
 cd $DIR/bash
@@ -30,4 +30,4 @@ ln -s $DIR/tmux.conf .tmux.conf
 cd ~/.config/i3
 ln -s $DIR/i3/i3config config
 cd ~/.config
-ln -s $DIR/i3/i3blocks i3blocks
+ln -s -T $DIR/i3/i3blocks i3blocks
