@@ -1,0 +1,18 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+export VISUAL="vim" # vim as default text editor
+set -o vi         
+
+stty -ixon            # So I can use Ctrl-S in vim
+bind -x '"\C-a":"fg"' # Easier fg commanf
+
+source ~/.bash_aliases
+source ~/.bash_functions
+source ~/.bash-powerline.sh
+source /usr/share/git/completion/git-completion.bash
+

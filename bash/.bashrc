@@ -1,0 +1,1 @@
+/home/jacob/dotfiles/bash/bashrc

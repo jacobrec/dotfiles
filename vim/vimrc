@@ -1,0 +1,96 @@
+" Jacob Reckhard
+" My vimrc file
+
+" Misc {{{
+set nocompatible              " be iMproved, required
+let g:tex_flavor = "latex"
+set number
+" }}}
+" Vundle {{{
+" set the runtime path to include Vundle and initialize
+filetype off                  " required, gets turned on later
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'bhurlow/vim-parinfer'
+
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" }}}
+" Tabs {{{
+set tabstop=4           " How large \t characters show up
+set expandtab           " Tab keystokes become spaces
+set shiftwidth=4        " Indent amount for >>, << and autoindent
+
+set showtabline=1       " Enum for when to show the tab bar at the top
+" 0 is never, 1 is when there is more then 1 tabs open, and 2 is always
+set laststatus=2        " When should the status line be displayed
+set cmdheight=1         " The height of the command bar at the bottom
+
+set hlsearch            " highlight matches when searching
+" }}}
+" Remapings {{{
+noremap <F3> :Autoformat<CR>
+nnoremap <c-s> :nohlsearch<CR> :write<CR>
+inoremap <c-s> <Esc> :nohlsearch<CR> :write<CR>
+
+noremap <TAB> :bn<CR>
+noremap <S-TAB> :bp<CR>
+command W w
+command Wq wq
+command WQ wq
+command Q q
+" Disable arrow keys {{{
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+" }}}
+" }}}
+" Buffers {{{
+let g:airline#extensions#tabline#enabled = 1 " show buffers at top
+set hidden      " switch buffers when some are unsaved
+" }}}
+" Auto format {{{
+let b:formatdef_clike='"astyle --mode=c --align-pointer=type --style=java --indent=spaces --suffix=none --attach-classes --attach-namespaces  --pad-oper --indent-classes"'
+let b:formatters_cpp = ['clike']
+let b:formatters_c = ['clike']
+
+let g:formatdef_autopep8 = "'autopep8 - --aggressive --aggressive'"
+let g:formatters_python = ['autopep8']
+let g:formatdef_dfmt = "'dfmt --brace_style=stroustrup --indent_style=space --indent_size=4'"
+let g:formatters_d = ['dfmt']
+" }}}
+" Ctrl-P {{{
+let g:ctrlp_match_window = 'order:ttb' " results go top to bottom
+let g:ctrlp_switch_buffer = 0   " open in new buffer
+let g:ctrlp_working_path_mode = 0 " have ctrlP use saem working path as vim when changing 
+let g:ctrlp_max_files = 20000 " amount of files it can find
+let g:ctrlp_user_command = 'ag %s -l -g  -S
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"""' " use silver searcher
+" }}}
+" Themes {{{
+syntax on                       " Enable syntax highlighting
+colorscheme onedark             " My colour scheme of choice
+
+let g:airline_theme='bubblegum' " Theme for airline statusbar plugin
+" }}}
+
+" This last line is so this file autofolds when opening
+" vim:foldmethod=marker:foldlevel=0
