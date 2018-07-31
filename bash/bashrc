@@ -14,5 +14,5 @@ bind -x '"\C-a":"fg"' # Easier fg commanf
 source ~/.bash_aliases
 source ~/.bash_functions
 source ~/.bash-powerline.sh
-source /usr/share/git/completion/git-completion.bash
+source ~/.git-completion.bash
 
