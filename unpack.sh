@@ -31,7 +31,7 @@ cd ~
 
 
 link $DIR/tmux.conf .tmux.conf
-cd ~/.config/i3
+mkdir -p ~/.config/i3; cd ~/.config/i3
 link $DIR/i3/i3config config
 cd ~/.config
 link $DIR/i3/i3blocks i3blocks
