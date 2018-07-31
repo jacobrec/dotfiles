@@ -11,6 +11,8 @@ set -o vi
 stty -ixon            # So I can use Ctrl-S in vim
 bind -x '"\C-a":"fg"' # Easier fg commanf
 
+export PATH="$PATH:~/bin" # Add user bin
+
 source ~/.bash_aliases
 source ~/.bash_functions
 source ~/.bash-powerline.sh
