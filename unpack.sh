@@ -12,22 +12,26 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null && pwd )"
 ##########         Jacob's Dot files           ##########
 ##########    Unpack all my configs script     ##########    
 #########################################################
+function link(){
+    echo "Linking $1 to location $PWD/$2"
+    ln -f -s -T $1 $2
+}
 cd ~
 
 # Move vim folder to home directory
-ln -s -T $DIR/vim .vim
+link $DIR/vim .vim
 
 # Move bash files to home directory
 cd $DIR/bash
 for file in *; do
     cd ~
-    ln -s $DIR/bash/$file .$file
+    link $DIR/bash/$file .$file
 done
 cd ~
 
 
-ln -s $DIR/tmux.conf .tmux.conf
+link $DIR/tmux.conf .tmux.conf
 cd ~/.config/i3
-ln -s $DIR/i3/i3config config
+link $DIR/i3/i3config config
 cd ~/.config
-ln -s -T $DIR/i3/i3blocks i3blocks
+link $DIR/i3/i3blocks i3blocks
