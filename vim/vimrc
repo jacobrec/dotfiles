@@ -5,6 +5,7 @@
 set nocompatible              " be iMproved, required
 let g:tex_flavor = "latex"
 set number
+autocmd BufWritePre * :%s/\s\+$//e
 " }}}
 " Vundle {{{
 " set the runtime path to include Vundle and initialize
