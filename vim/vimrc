@@ -5,6 +5,7 @@
 set nocompatible              " be iMproved, required
 let g:tex_flavor = "latex"
 set number
+autocmd BufWritePre * :%s/\s\+$//e
 " }}}
 " Vundle {{{
 " set the runtime path to include Vundle and initialize
@@ -38,8 +39,11 @@ set hlsearch            " highlight matches when searching
 " }}}
 " Remapings {{{
 noremap <F3> :Autoformat<CR>
+
+" Searching
 nnoremap <c-s> :nohlsearch<CR> :write<CR>
 inoremap <c-s> <Esc> :nohlsearch<CR> :write<CR>
+noremap ;; :%s///g<Left><Left><Left> 
 
 noremap <TAB> :bn<CR>
 noremap <S-TAB> :bp<CR>
@@ -47,6 +51,7 @@ command W w
 command Wq wq
 command WQ wq
 command Q q
+
 " Disable arrow keys {{{
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -72,6 +77,10 @@ let g:formatdef_autopep8 = "'autopep8 - --aggressive --aggressive'"
 let g:formatters_python = ['autopep8']
 let g:formatdef_dfmt = "'dfmt --brace_style=stroustrup --indent_style=space --indent_size=4'"
 let g:formatters_d = ['dfmt']
+
+au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.tex setlocal textwidth=80
+au BufRead,BufNewFile *.txt setlocal textwidth=80
 " }}}
 " Ctrl-P {{{
 let g:ctrlp_match_window = 'order:ttb' " results go top to bottom
