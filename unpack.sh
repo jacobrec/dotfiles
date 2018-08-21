@@ -10,7 +10,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null && pwd )"
 
 #########################################################
 ##########         Jacob's Dot files           ##########
-##########    Unpack all my configs script     ##########    
+##########    Unpack all my configs script     ##########
 #########################################################
 function link(){
     echo "Linking $1 to location $PWD/$2"
@@ -27,6 +27,13 @@ cd $DIR/bash
 for file in *; do
     cd ~
     link $DIR/bash/$file .$file
+done
+
+# Move x files to home directory
+cd $DIR/x
+for file in *; do
+    cd ~
+    link $DIR/x/$file .$file
 done
 cd ~
 
