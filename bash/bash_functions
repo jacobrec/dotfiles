@@ -1,13 +1,6 @@
 # TODO: remove these 2 when I'm done work
 function screen(){
     xrandr --auto --output eDP1 --mode 3200x1800 --left-of DP1;
-    xrandr --output DP1 --scale 2x2 
+    xrandr --output DP1 --scale 2x2
     background
-}
-
-function ppdebug(){
-    # debug -fsyntax-only -Xclang -ast-dump $1;
-    debug -fsyntax-only -Xclang -ast-print $1;
-    # cat $1;
-    # debug -fsyntax-only $1;
 }

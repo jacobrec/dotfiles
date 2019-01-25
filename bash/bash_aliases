@@ -4,7 +4,4 @@ alias background="feh --randomize --bg-fill ~/Pictures/wallpapers/*"
 alias gitlog="git -c core.pager='less -SRF' log --oneline --graph --decorate"
 alias please="sudo apt-get"
 
-# remove these when I'm done work
-alias debug="~/docs/Work/clang_stuff/build/bin/clang++"
-alias release="~/docs/Work/clang_stuff/release/bin/clang++"
 
