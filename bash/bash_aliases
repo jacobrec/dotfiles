@@ -4,4 +4,5 @@ alias background="feh --randomize --bg-fill ~/Pictures/wallpapers/*"
 alias gitlog="git -c core.pager='less -SRF' log --oneline --graph --decorate"
 alias please="sudo apt-get"
 
-
+alias et='emacsclient -create-frame -ta=""'
+alias ec='emacsclient -create-frame -ca=""'
