@@ -44,8 +44,9 @@ link $DIR/sbclrc .sbclrc
 link $DIR/emacs .emacs.d
 
 chmod +x ~/.emacs.d/install.sh
-~/.emacs.d/install.sh
+cd .emacs.d && ./install.sh
 
+cd ~
 mkdir -p ~/.config/i3; cd ~/.config/i3
 link $DIR/i3/i3config config
 cd ~/.config
