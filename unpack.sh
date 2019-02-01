@@ -41,6 +41,10 @@ cd ~
 
 link $DIR/tmux.conf .tmux.conf
 link $DIR/sbclrc .sbclrc
+link $DIR/emacs .emacs.d
+
+chmod +x ~/.emacs.d/install.sh
+~/.emacs.d/install.sh
 
 mkdir -p ~/.config/i3; cd ~/.config/i3
 link $DIR/i3/i3config config
