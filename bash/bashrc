@@ -6,13 +6,10 @@
 [[ $- != *i* ]] && return
 
 export VISUAL="vim" # vim as default text editor
-set -o vi         
+set -o vi
 
 stty -ixon            # So I can use Ctrl-S in vim
 bind -x '"\C-a":"fg"' # Easier fg commanf
-
-export PATH="$PATH:~/bin" # Add user bin
-export PATH="$PATH:~/.local/bin" # Add user bin
 
 source ~/.bash_aliases
 source ~/.bash_functions

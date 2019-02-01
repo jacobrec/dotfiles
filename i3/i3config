@@ -18,10 +18,6 @@ font pango:Noto Sans Mono 10
 # Remove title bars
 for_window [class="^.*"] border pixel 5
 
-gaps inner 7
-gaps outer 0
-smart_gaps on
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 15
