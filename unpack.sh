@@ -41,7 +41,6 @@ cd ~
 
 link $DIR/tmux.conf .tmux.conf
 link $DIR/sbclrc .sbclrc
-link $DIR/spacemacs .spacemacs
 
 mkdir -p ~/.config/i3; cd ~/.config/i3
 link $DIR/i3/i3config config
