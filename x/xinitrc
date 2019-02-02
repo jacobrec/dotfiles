@@ -1,5 +1,3 @@
-xrdb-merge ~/XResources
-xrandr --dpi 200
+xrdb -merge ~/.XResources
 setxkbmap us -option ctrl:nocaps # disable capslock key
 exec i3
-background

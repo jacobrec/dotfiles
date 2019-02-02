@@ -33,7 +33,7 @@ for_window [class="^.*"] border pixel 5
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec dbus-launch gnome-terminal
+bindsym $mod+Return exec dbus-launch termite
 # bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -137,8 +137,6 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -177,10 +175,8 @@ bindsym $mod+p exec emacs
 exec xinput set-prop 13 295 1 # enable touchpad(device 13) tap to click(295) 1 means on
 exec --no-startup-id xautolock -time 5 -locker 'lock.sh' # no activity for 5 minutes autolocks
 bindsym $mod+x exec i3lock -e -f -c 28282C # lock screen
-bindsym $mod+Shift+x exec lock.sh    # fancy lock screen
 
 # move focused workspace between monitors
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
-exec feh --bg-fill ~/Pictures/emacs.png
