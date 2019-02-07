@@ -42,6 +42,7 @@ cd ~
 link $DIR/tmux.conf .tmux.conf
 link $DIR/sbclrc .sbclrc
 link $DIR/emacs .emacs.d
+link $DIR/fish .config/fish
 
 chmod +x ~/.emacs.d/install.sh
 cd .emacs.d && ./install.sh
