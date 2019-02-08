@@ -1,3 +1,4 @@
 xrdb -merge ~/.XResources
 setxkbmap us -option ctrl:nocaps # disable capslock key
+xset b off
 exec i3

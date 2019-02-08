@@ -5,21 +5,9 @@ command=~/.config/i3blocks/scripts/$BLOCK_NAME
 separator_block_width=25
 markup=none
 
-
-[jalert]
-command=cat ~/.jacobstatusbaralertindicator.txt
+[volume]
+label=♬
 interval=1
-
-# sync wont show anything, this just ensures it gets called
-[jweather]
-command=jweather_sync
-interval=30
-
-[jweather]
-command=jweather_read
-separator=true
-interval=10
-markup=pango
 
 [cpu_usage]
 label=

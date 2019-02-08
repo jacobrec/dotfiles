@@ -41,10 +41,14 @@ cd ~
 
 link $DIR/tmux.conf .tmux.conf
 link $DIR/sbclrc .sbclrc
-link $DIR/emacs .emacs.d
 
-chmod +x ~/.emacs.d/install.sh
-cd .emacs.d && ./install.sh
+git clone https://github.com/syl20bnr/spacemacs.git .emacs.d/
+cd .emacs.d
+git checkout develop
+cd ~
+link $DIR/spacemacs .spacemacs
+link $DIR/spacemacs-user .spacemacs-user
+
 
 cd ~
 mkdir -p ~/.config/i3; cd ~/.config/i3
