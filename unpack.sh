@@ -41,6 +41,7 @@ cd ~
 
 link $DIR/tmux.conf .tmux.conf
 link $DIR/sbclrc .sbclrc
+link $DIR/fish .config/fish
 
 git clone https://github.com/syl20bnr/spacemacs.git .emacs.d/
 cd .emacs.d
