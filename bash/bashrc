@@ -2,14 +2,14 @@
 # ~/.bashrc
 #
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export NODE_ENV=local-nabil
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-export VISUAL="vim" # vim as default text editor
-set -o vi
-
-stty -ixon            # So I can use Ctrl-S in vim
-bind -x '"\C-a":"fg"' # Easier fg commanf
 
 source ~/.bash_aliases
 source ~/.bash_functions
@@ -17,6 +17,6 @@ source ~/.bash-powerline.sh
 source ~/.git-completion.bash
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export VISUAL="vim" # vim as default text editor
+set -o vi
+bind -x '"\C-a":"fg"' # Easier fg command

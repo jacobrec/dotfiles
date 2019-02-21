@@ -5,43 +5,30 @@ command=~/.config/i3blocks/scripts/$BLOCK_NAME
 separator_block_width=25
 markup=none
 
-[volume]
-label=♬
+
+[vpn]
+label=VPN:
+separator=true
 interval=1
 
 [cpu_usage]
 label=
-separator=true
 interval=2
 
 [memory]
+command=/usr/share/i3blocks/memory
 label=
-separator=false
 interval=1
-command=/usr/lib/i3blocks/memory
-color=#dfe3ee
-
-[memory]
-label=
-instance=swap
-separator=true
-interval=10
-command=/usr/lib/i3blocks/memory
-color=#7ea1a5
+separator=false
+color=#99BBBB
 
 [disk]
 label=
 instance=/
 interval=30
-separator=false
-color=#ffff00
-
-[disk]
-label=
-instance=/data
-interval=30
 separator=true
 color=#ffff00
+
 
 [wifi]
 label=
@@ -53,7 +40,7 @@ separator=false
 interval=20
 separator=true
 
-[battery]
+[mybattery]
 interval=10
 
 # Date 

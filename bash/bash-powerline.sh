@@ -13,22 +13,19 @@ __powerline() {
     readonly COLOR_FAILURE='\[\033[0;31m\]' # red
 
     readonly SYMBOL_GIT_BRANCH='⎇  '
-    readonly SYMBOL_GIT_MODIFIED='*'
+    readonly SYMBOL_GIT_MODIFIED='☡ '
     readonly SYMBOL_GIT_PUSH='↑'
     readonly SYMBOL_GIT_PULL='↓'
+    readonly SYMBOL_GIT_STASH='⛁ '
 
     readonly SERVER="$(whoami)@$(cat /etc/hostname)$COLOR_RESET:"
 
 
     if [[ -z "$PS_SYMBOL" ]]; then
-      case "$(uname)" in
-          Darwin)   PS_SYMBOL='';;
-          Linux)    PS_SYMBOL='$';;
-          *)        PS_SYMBOL='%';;
-      esac
+       PS_SYMBOL='$'
     fi
 
-    __git_info() { 
+    __git_info() {
         [[ $POWERLINE_GIT = 0 ]] && return # disabled
         hash git 2>/dev/null || return # git not found
         local git_eng="env LANG=C git"   # force git output in English to make our work easier
@@ -59,14 +56,20 @@ __powerline() {
             fi
         done < <($git_eng status --porcelain --branch 2>/dev/null)  # note the space between the two <
 
+        local stash=$($git_eng status --show-stash | ag '(stash)' | ag '\d+' -o)
+        if [[ -z "$stash" ]]; then
+          stash=""
+        else
+          stash="$SYMBOL_GIT_STASH$stash "
+        fi;
         # print the git branch segment without a trailing newline
-        printf " $ref$marks"
+        printf " $stash$ref$marks"
     }
 
 
     ps1() {
         # Check the exit code of the previous command and display different
-        # colors in the prompt accordingly. 
+        # colors in the prompt accordingly.
         if [ $? -eq 0 ]; then
             local symbol="$COLOR_SUCCESS$PS_SYMBOL $RESET"
         else

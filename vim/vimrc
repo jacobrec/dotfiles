@@ -6,6 +6,9 @@ set nocompatible              " be iMproved, required
 let g:tex_flavor = "latex"
 set number
 autocmd BufWritePre * :%s/\s\+$//e
+
+set backupdir=./.backup,.,/tmp
+set directory=./.backup,/tmp
 " }}}
 " Vundle {{{
 " set the runtime path to include Vundle and initialize
@@ -19,7 +22,13 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'bhurlow/vim-parinfer'
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'w0rp/ale'
+
+
 
 
 call vundle#end()            " required
@@ -28,7 +37,7 @@ filetype plugin indent on    " required
 " Tabs {{{
 set tabstop=4           " How large \t characters show up
 set expandtab           " Tab keystokes become spaces
-set shiftwidth=4        " Indent amount for >>, << and autoindent
+set shiftwidth=2        " Indent amount for >>, << and autoindent
 
 set showtabline=1       " Enum for when to show the tab bar at the top
 " 0 is never, 1 is when there is more then 1 tabs open, and 2 is always
@@ -43,7 +52,7 @@ noremap <F3> :Autoformat<CR>
 " Searching
 nnoremap <c-s> :nohlsearch<CR> :write<CR>
 inoremap <c-s> <Esc> :nohlsearch<CR> :write<CR>
-noremap ;; :%s///g<Left><Left><Left> 
+noremap ;; :%s///g<Left><Left><Left>
 
 noremap <TAB> :bn<CR>
 noremap <S-TAB> :bp<CR>
@@ -51,18 +60,6 @@ command W w
 command Wq wq
 command WQ wq
 command Q q
-
-" Disable arrow keys {{{
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-" }}}
 " }}}
 " Buffers {{{
 let g:airline#extensions#tabline#enabled = 1 " show buffers at top
@@ -81,11 +78,18 @@ let g:formatters_d = ['dfmt']
 au BufRead,BufNewFile *.md setlocal textwidth=80
 au BufRead,BufNewFile *.tex setlocal textwidth=80
 au BufRead,BufNewFile *.txt setlocal textwidth=80
+
+let g:ale_linters = {
+\   'javascript': ['standard'],
+\}
+let g:ale_fixers = {'javascript': ['standard']}
+let g:ale_lint_on_save = 1
+
 " }}}
 " Ctrl-P {{{
 let g:ctrlp_match_window = 'order:ttb' " results go top to bottom
 let g:ctrlp_switch_buffer = 0   " open in new buffer
-let g:ctrlp_working_path_mode = 0 " have ctrlP use saem working path as vim when changing 
+let g:ctrlp_working_path_mode = 0 " have ctrlP use saem working path as vim when changing
 let g:ctrlp_max_files = 20000 " amount of files it can find
 let g:ctrlp_user_command = 'ag %s -l -g  -S
       \ --ignore .git

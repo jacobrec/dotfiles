@@ -6,3 +6,5 @@ alias please="sudo zypper"
 
 alias et='emacsclient -create-frame -ta=""'
 alias ec='emacsclient -create-frame -ca=""'
+
+alias fin="todo -r"

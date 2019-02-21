@@ -13,7 +13,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Noto Sans Mono 10
+#font pango:Noto Mono 10
+font pango:Noto Sans, Awesome 15
 
 # Remove title bars
 for_window [class="^.*"] border pixel 5
@@ -136,10 +137,22 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+bindsym $mod+Shift+greater move workspace to output right
+bindsym $mod+Shift+less move workspace to output left
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -173,11 +186,11 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3blocks
 }
-bindsym $mod+b exec chromium
-bindsym $mod+p exec emacs
+bindsym $mod+p exec emacsclient -create-frame -ca=""
+bindsym $mod+b exec google-chrome
 exec xinput set-prop 13 295 1 # enable touchpad(device 13) tap to click(295) 1 means on
-exec --no-startup-id xautolock -time 5 -locker 'lock.sh' # no activity for 5 minutes autolocks
 bindsym $mod+x exec i3lock -e -f -c 28282C # lock screen
+exec setxkbmap -option ctrl:nocaps
 
 # move focused workspace between monitors
 bindsym $mod+Ctrl+greater move workspace to output right

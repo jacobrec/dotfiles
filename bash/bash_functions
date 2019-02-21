@@ -1,6 +1,23 @@
 # TODO: remove these 2 when I'm done work
-function screen(){
-    xrandr --auto --output eDP1 --mode 3200x1800 --left-of DP1;
-    xrandr --output DP1 --scale 2x2
-    background
+vpn () {
+    if [ "$1" == "on" ]; then
+        sudo echo "VPN: Turning on";
+    else
+        sudo echo "VPN: Turning off";
+    fi;
+    if [ "$1" == "on" ]; then
+        sudo openvpn --config ~/.client.ovpn &> /dev/null &
+    else
+        sudo kill $(ps -aux | ag -Q 'sudo openvpn --config' | ag '(root).*' | ag -o '^root\s+\d+' | ag -o '\d+$');
+    fi
 }
+
+screen () {
+    xrandr --auto;
+    xrandr --output DP-1-1-2 --auto;
+    xrandr --output DP-1-2-2 --auto;
+    xrandr --output DP-1-2-2 --right-of eDP-1-1;
+    xrandr --output DP-1-1-2 --left-of eDP-1-1;
+    feh --randomize --bg-fill ~/Pictures/wallpapers/*
+}
+
