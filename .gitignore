@@ -3,3 +3,6 @@ vim/bundle/*
 vim/.netrwhist
 
 *.swp
+
+emacs/custom.el
+emacs/elpa/

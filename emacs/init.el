@@ -29,14 +29,23 @@
 ;(add-hook 'prog-mode-hook 'rainbow-delimiters-mode) ;; pretty brackets
 
 
-;; Color theme
+;; General stuff
 (use-package spacemacs-theme
   :defer t
   :init (load-theme 'spacemacs-dark t))
-
 (use-package ag
+  :ensure t
   :defer t)
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+(use-package company
+  :ensure t
+  :hook (prog-mode . company-mode)
+  :config (setq company-tooltip-align-annotations t)
+          (setq company-minimum-prefix-length 1))
 
+;; lisp stuff
 (use-package parinfer
   :ensure t
   :init
@@ -54,3 +63,19 @@
     (add-hook 'scheme-mode-hook #'parinfer-mode)
     (add-hook 'lisp-mode-hook #'parinfer-mode)))
 
+
+;; rust stuff
+(use-package flycheck-rust
+  :ensure t
+  :config (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+(use-package rust-mode
+  :ensure t)
+(use-package cargo
+  :ensure t
+  :hook (rust-mode . cargo-minor-mode))
+(use-package toml-mode
+  :ensure t)
+
+;; go stuff
+(use-package go-mode
+  :ensure t)
