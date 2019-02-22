@@ -15,6 +15,7 @@
 (evil-mode 1) ; use evil mode
 
 ;; remove all those extra ui stuff
+(setq inhibit-startup-screen t)
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
