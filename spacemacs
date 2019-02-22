@@ -33,7 +33,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(react
+   '(sql
+     react
      html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -447,7 +448,7 @@ This function is called at the very end of Spacemacs initialization."
  '(delete-selection-mode nil)
  '(package-selected-packages
    (quote
-    (parinfer clojure-snippets cider-eval-sexp-fu eval-sexp-fu cider sesman spinner queue clojure-mode livid-mode skewer-mode json-navigator hierarchy json-mode json-snatcher json-reformat js2-refactor multiple-cursors company-tern dash-functional yasnippet-snippets which-key wgrep web-mode web-beautify wakatime-mode use-package treemacs-projectile treemacs-evil toml-mode toc-org tern tagedit smex smeargle smartparens slime-company slim-mode scss-mode sass-mode rjsx-mode racer pug-mode prettier-js pcre2el overseer orgit org-present org-pomodoro org-mime org-download org-bullets org-brain nameless magit-svn magit-gitflow js-doc ivy-yasnippet ivy-xref ivy-hydra insert-shebang impatient-mode helm-make godoctor go-tag go-rename go-impl go-guru go-gen-test go-fill-struct go-eldoc gnuplot gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-rust flycheck-pos-tip flycheck-bashate flx fish-mode evil-org evil-matchit evil-magit emmet-mode elisp-slime-nav dotenv-mode diminish counsel-css company-web company-statistics company-shell company-go common-lisp-snippets cargo bind-map auto-yasnippet auto-compile add-node-modules-path ac-ispell))))
+    (sqlup-mode sql-indent parinfer clojure-snippets cider-eval-sexp-fu eval-sexp-fu cider sesman spinner queue clojure-mode livid-mode skewer-mode json-navigator hierarchy json-mode json-snatcher json-reformat js2-refactor multiple-cursors company-tern dash-functional yasnippet-snippets which-key wgrep web-mode web-beautify wakatime-mode use-package treemacs-projectile treemacs-evil toml-mode toc-org tern tagedit smex smeargle smartparens slime-company slim-mode scss-mode sass-mode rjsx-mode racer pug-mode prettier-js pcre2el overseer orgit org-present org-pomodoro org-mime org-download org-bullets org-brain nameless magit-svn magit-gitflow js-doc ivy-yasnippet ivy-xref ivy-hydra insert-shebang impatient-mode helm-make godoctor go-tag go-rename go-impl go-guru go-gen-test go-fill-struct go-eldoc gnuplot gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-rust flycheck-pos-tip flycheck-bashate flx fish-mode evil-org evil-matchit evil-magit emmet-mode elisp-slime-nav dotenv-mode diminish counsel-css company-web company-statistics company-shell company-go common-lisp-snippets cargo bind-map auto-yasnippet auto-compile add-node-modules-path ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
