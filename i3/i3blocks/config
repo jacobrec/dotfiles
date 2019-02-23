@@ -40,7 +40,7 @@ separator=false
 interval=20
 separator=true
 
-[mybattery]
+[battery]
 interval=10
 
 # Date 
