@@ -1,20 +1,14 @@
 (require 'package)
+; (setq package-archives '(("elpa"   . "http://elpa.gnu.org/packages/") ("melpa" . "https://melpa.org/packages/")))
+
 (package-initialize)
 
+(add-to-list 'load-path "~/.emacs.d/use-package/")
 
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-
-(add-to-list 'load-path "~/.emacs.d/rainbow")
-(add-to-list 'load-path "~/.emacs.d/evil")
-
-(require 'evil)
-(require 'rainbow-delimiters)
 (require 'use-package)
 
+
 (setq custom-file (concat user-emacs-directory "/custom.el")) ; this is never loaded anywasy
-(evil-mode 1) ; use evil mode
-(define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
-(setq evil-shift-width 4)
 
 (show-paren-mode 1) ; show matching parenthesis
 (setq vc-follow-symlinks t) ; stop asking me every time
@@ -23,8 +17,10 @@
 
 ;; remove all those extra ui stuff
 (setq inhibit-startup-screen t)
+(setq initial-scratch-message "Welcome back Jacob")
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
+(tooltip-mode -1)
 (tool-bar-mode -1)
 
 ;; backup files no more
@@ -59,12 +55,20 @@
 
 
 ;; General stuff
+(use-package rainbow-delimiters
+  :ensure t
+  :defer t)
+(use-package evil
+  :ensure t
+  :defer t
+  :init
+  (setq evil-shift-width 4)
+  (setq evil-shift-round nil)
+  (evil-mode)
+  (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop))
 (use-package spacemacs-theme
   :defer t
   :init (load-theme 'spacemacs-dark t))
-(use-package ag
-  :ensure t
-  :defer t)
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
@@ -148,6 +152,7 @@
 (use-package parinfer
   :ensure t
   :defer t
+  :diminish (parinfer-mode . "↯") ; does not display parinfer in the modeline
   :init
   (progn
     (setq parinfer-extensions
@@ -161,6 +166,9 @@
     (add-hook 'common-lisp-mode-hook #'parinfer-mode)
     (add-hook 'scheme-mode-hook #'parinfer-mode)
     (add-hook 'lisp-mode-hook #'parinfer-mode)))
+(use-package clojure-mode
+  :ensure t
+  :defer t)
 
 ;; rust stuff
 (use-package flycheck-rust

@@ -1,6 +1,6 @@
 [submodule "vim/bundle/Vundle.git"]
 	path = vim/bundle/Vundle.git
 	url = https://github.com/VundleVim/Vundle.vim
-[submodule "emacs/evil"]
-	path = emacs/evil
-	url = https://github.com/emacs-evil/evil.git
+[submodule "emacs/use-package"]
+	path = emacs/use-package
+	url = https://github.com/jwiegley/use-package.git
