@@ -1,5 +1,5 @@
 (require 'package)
-; (setq package-archives '(("elpa"   . "http://elpa.gnu.org/packages/") ("melpa" . "https://melpa.org/packages/")))
+;(setq package-archives '(("elpa"   . "http://elpa.gnu.org/packages/") ("melpa" . "https://melpa.org/packages/")))
 
 (package-initialize)
 
@@ -66,12 +66,13 @@
   (setq evil-shift-round nil)
   (evil-mode)
   (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop))
-(use-package spacemacs-theme
-  :defer t
-  :init (load-theme 'spacemacs-dark t))
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
+(use-package doom-themes
+  :ensure t :defer t
+  :init
+  (load-theme 'doom-one t))
 (use-package company
   :ensure t
   :hook (prog-mode . company-mode)
@@ -142,13 +143,13 @@
    ("C-c s"   . counsel-git-grep)  ; search for regexp in git repo
    ("C-c /"   . counsel-ag)        ; search for regexp in git repo using ag
    ("C-c l"   . counsel-locate)))   ; search for files or else using locate
-  
+
 
 ;; lisp stuff
 (add-hook 'emacs-lisp-mode-hook
   (lambda ()
     (setq evil-shift-width 2)))
-          
+
 (use-package parinfer
   :ensure t
   :defer t

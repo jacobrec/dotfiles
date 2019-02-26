@@ -13,23 +13,13 @@ set directory=./.backup,/tmp
 " Vundle {{{
 " set the runtime path to include Vundle and initialize
 filetype off                  " required, gets turned on later
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle
 call vundle#begin()
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Chiel92/vim-autoformat'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ctrlpvim/ctrlp.vim'
-
-Plugin 'pangloss/vim-javascript'
-Plugin 'maxmellon/vim-jsx-pretty'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'w0rp/ale'
-
-
-
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -64,39 +54,6 @@ command Q q
 " Buffers {{{
 let g:airline#extensions#tabline#enabled = 1 " show buffers at top
 set hidden      " switch buffers when some are unsaved
-" }}}
-" Auto format {{{
-let b:formatdef_clike='"astyle --mode=c --align-pointer=type --style=java --indent=spaces --suffix=none --attach-classes --attach-namespaces  --pad-oper --indent-classes"'
-let b:formatters_cpp = ['clike']
-let b:formatters_c = ['clike']
-
-let g:formatdef_autopep8 = "'autopep8 - --aggressive --aggressive'"
-let g:formatters_python = ['autopep8']
-let g:formatdef_dfmt = "'dfmt --brace_style=stroustrup --indent_style=space --indent_size=4'"
-let g:formatters_d = ['dfmt']
-
-au BufRead,BufNewFile *.md setlocal textwidth=80
-au BufRead,BufNewFile *.tex setlocal textwidth=80
-au BufRead,BufNewFile *.txt setlocal textwidth=80
-
-let g:ale_linters = {
-\   'javascript': ['standard'],
-\}
-let g:ale_fixers = {'javascript': ['standard']}
-let g:ale_lint_on_save = 1
-
-" }}}
-" Ctrl-P {{{
-let g:ctrlp_match_window = 'order:ttb' " results go top to bottom
-let g:ctrlp_switch_buffer = 0   " open in new buffer
-let g:ctrlp_working_path_mode = 0 " have ctrlP use saem working path as vim when changing
-let g:ctrlp_max_files = 20000 " amount of files it can find
-let g:ctrlp_user_command = 'ag %s -l -g  -S
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "**/*.pyc"""' " use silver searcher
 " }}}
 " Themes {{{
 syntax on                       " Enable syntax highlighting
