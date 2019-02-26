@@ -21,6 +21,7 @@
 
    "f"  '(:ignore t :which-key "Files")
    "ff" '(counsel-find-file :which-key "file find")
+   "fr" '(counsel-recentf :which-key "file recent")
    "fs" '(save-buffer :which-key "file save")
    "fS" '(evil-write-all :which-key "file save-all")
 

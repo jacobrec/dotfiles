@@ -12,4 +12,4 @@
 (require 'j-keys)
 (require 'j-packages)
 
-(load-all-in-directory (concat user-emacs-directory "/j-config/lang")))
+(load-all-in-directory (concat user-emacs-directory "/j-config/lang"))
