@@ -1,18 +1,19 @@
 (setq custom-file (concat user-emacs-directory "/custom.el")) ; this is never loaded anywasy
 
-(show-paren-mode 1) ; show matching parenthesis
 (setq vc-follow-symlinks t) ; stop asking me every time
 
-(set-face-attribute 'default nil :height 150)
 
 
 ;; remove all those extra ui stuff
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "Welcome back Jacob")
-(menu-bar-mode -1)
-(toggle-scroll-bar -1)
-(tooltip-mode -1)
-(tool-bar-mode -1)
+(progn
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (tooltip-mode -1)
+  (tool-bar-mode -1)
+  (set-face-attribute 'default nil :height 150))
+
 
 ;; backup files no more
 (setq backup-inhibited t
@@ -22,5 +23,6 @@
 
 
 (global-linum-mode t) ; line numbers
+(show-paren-mode 1) ; show matching parenthesis
 
 (provide 'j-settings)
