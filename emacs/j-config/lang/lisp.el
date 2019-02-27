@@ -1,11 +1,10 @@
-(add-hook 'emacs-lisp-mode-hook
-  (lambda ()
-    (setq evil-shift-width 2)))
-
 (use-package parinfer
   :ensure t
   :defer t
   :diminish (parinfer-mode . "↯") ; does not display parinfer in the modeline
+  :config
+  (progn
+    (setq evil-shift-width 2))
   :init
   (progn
     (setq parinfer-extensions
@@ -19,3 +18,10 @@
     (add-hook 'common-lisp-mode-hook #'parinfer-mode)
     (add-hook 'scheme-mode-hook #'parinfer-mode)
     (add-hook 'lisp-mode-hook #'parinfer-mode)))
+
+(use-package slime
+  :ensure t
+  :config
+  (progn
+    (setq inferior-lisp-program "/usr/bin/sbcl")
+    (slime-setup)))

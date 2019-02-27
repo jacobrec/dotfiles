@@ -7,3 +7,5 @@ vim/.netrwhist
 emacs/custom.el
 emacs/elpa/
 emacs/auto-save-list/
+emacs/recentf
+emacs/.cache/

@@ -3,6 +3,7 @@
 (show-paren-mode 1) ; show matching parenthesis
 (setq vc-follow-symlinks t) ; stop asking me every time
 
+(set-face-attribute 'default nil :height 150)
 
 
 ;; remove all those extra ui stuff
