@@ -24,7 +24,7 @@
    "fr" '(counsel-recentf :which-key "file recent")
    "fs" '(save-buffer :which-key "file save")
    "fS" '(evil-write-all :which-key "file save-all")
-   "fr" '(quit-window :which-key "file recent")
+   "fq" '(quit-window :which-key "file recent")
 
    "w"  '(:ignore t :which-key "Window")
    "wd" '(delete-window :which-key "window kill")
