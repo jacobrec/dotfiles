@@ -6,6 +6,14 @@
     (evil-mode)
     (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)))
 
+(use-package evil-escape
+  :ensure t
+  :init
+  (evil-escape-mode)
+  :config
+  (setq-default evil-escape-key-sequence "jk"))
+
+
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))

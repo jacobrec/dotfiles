@@ -24,6 +24,7 @@
    "fr" '(counsel-recentf :which-key "file recent")
    "fs" '(save-buffer :which-key "file save")
    "fS" '(evil-write-all :which-key "file save-all")
+   "fr" '(quit-window :which-key "file recent")
 
    "w"  '(:ignore t :which-key "Window")
    "wd" '(delete-window :which-key "window kill")
@@ -37,6 +38,7 @@
    "ws"  '(:ignore t :which-key "Window Split")
    "wsv" '(split-window-below :which-key "window split vertical")
    "wsh" '(split-window-right :which-key "window split horizontal")
+   "wq" '(evil-quit :which-key "window quit")
 
    "SPC" '(counsel-M-x :which-key "execute command")))
 

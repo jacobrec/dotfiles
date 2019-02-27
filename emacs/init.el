@@ -1,11 +1,11 @@
 (let ((file-name-handler-alist nil))
   (setf gc-cons-threshold 100000000)
   (require 'package)
+;  (setq package-archives
+;    '(("elpa"   . "http://elpa.gnu.org/packages/")
+;      ("melpa" . "https://melpa.org/packages/"))
   (package-initialize)
-  ;(setq package-archives
-  ;  '(("elpa"   . "http://elpa.gnu.org/packages/")
-  ;    ("melpa" . "https://melpa.org/packages/"))
-  ;(package-refresh-contents)
+;  (package-refresh-contents)
 
   (add-to-list 'load-path "~/.emacs.d/use-package/")
   (require 'use-package)
