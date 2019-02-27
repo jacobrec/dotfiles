@@ -4,6 +4,8 @@ vim/.netrwhist
 
 *.swp
 
+**/*.elc
+
 emacs/custom.el
 emacs/elpa/
 emacs/auto-save-list/
