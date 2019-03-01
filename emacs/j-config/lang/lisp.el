@@ -4,7 +4,8 @@
   :diminish (parinfer-mode . "↯") ; does not display parinfer in the modeline
   :config
   (progn
-    (setq evil-shift-width 2))
+    (setq evil-shift-width 2)
+    (setq-default tab-width 2))
   :init
   (progn
     (setq parinfer-extensions

@@ -16,8 +16,8 @@
 
 
   (add-to-list 'load-path "~/.emacs.d/j-config/")
-  (require 'j-settings)
   (require 'j-funcs)
+  (require 'j-settings)
   (require 'j-keys)
   (require 'j-packages)
 

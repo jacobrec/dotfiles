@@ -33,4 +33,12 @@
           (load library nil t)
           (push library libraries-loaded))))))
 
+
+;; To have normal tab keys
+(defvar just-tab-keymap (make-sparse-keymap) "Keymap for just-tab-mode")
+(define-minor-mode just-tab-mode
+  "Just want the TAB key to be a TAB"
+  :global t :lighter " TAB" :init-value 0 :keymap just-tab-keymap
+  (define-key just-tab-keymap (kbd "TAB") 'indent-for-tab-command))
+
 (provide 'j-funcs)
