@@ -24,5 +24,7 @@
 
 (global-linum-mode t) ; line numbers
 (show-paren-mode 1) ; show matching parenthesis
+(setq-default indent-tabs-mode nil) ;; no tabs
+(global-whitespace-mode) ;; show whitespace
 
 (provide 'j-settings)
