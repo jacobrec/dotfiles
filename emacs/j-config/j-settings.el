@@ -1,4 +1,5 @@
-(setq custom-file (concat user-emacs-directory "/custom.el")) ; this is never loaded anywasy
+;this is never loaded anywasy)
+(setq custom-file (concat user-emacs-directory "/custom.el"))
 
 (setq vc-follow-symlinks t) ; stop asking me every time
 
@@ -7,12 +8,12 @@
 ;; remove all those extra ui stuff
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "Welcome back Jacob")
-(progn
-  (menu-bar-mode -1)
-  (scroll-bar-mode -1)
-  (tooltip-mode -1)
-  (tool-bar-mode -1)
-  (set-face-attribute 'default nil :height 150))
+(unless (display-graphic-p)
+  (menu-bar-mode -1))
+; (scroll-bar-mode -1)
+; (tooltip-mode -1)
+; (tool-bar-mode -1)
+; (set-face-attribute 'default nil :height 150))
 
 
 ;; backup files no more
