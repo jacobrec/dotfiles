@@ -28,11 +28,11 @@
 
 (global-linum-mode t) ; line numbers
 (show-paren-mode 1) ; show matching parenthesis
-(setq whitespace-line-column 120); 120 column width before emacs gets mad
+(setq whitespace-line-column 220); column width before emacs gets mad
 (global-whitespace-mode) ;; show whitespace
 
 (setq-default indent-tabs-mode nil) ;; no tabs
 (setq-default tab-width 4)
-(just-tab-mode)
+
 
 (provide 'j-settings)
