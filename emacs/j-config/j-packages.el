@@ -20,6 +20,10 @@
   (diminish 'undo-tree-mode)
   (diminish 'global-whitespace-mode))
 
+(use-package wakatime-mode
+  :ensure t
+  :init (global-wakatime-mode))
+
 
 
 (use-package flycheck
