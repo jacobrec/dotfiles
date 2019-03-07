@@ -4,7 +4,7 @@
   :diminish (parinfer-mode . "↯") ; does not display parinfer in the modeline
   :config
   (progn
-    (setq evil-shift-width 2)
+    (setq-default evil-shift-width 2)
     (setq-default tab-width 2))
   :init
   (progn
@@ -36,5 +36,3 @@
        "meb" '(slime-eval-buffer :which-key "eval buffer")
        "mel" '(slime-eval-last-expression :which-key "eval last s-exp"))
     (slime-setup)))
-
-           

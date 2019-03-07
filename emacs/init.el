@@ -1,9 +1,9 @@
 (let ((file-name-handler-alist nil))
   (setf gc-cons-threshold 100000000)
   (require 'package)
-;  (setq package-archives)
-;    '(("elpa"   . "http://elpa.gnu.org/packages/")))
-;      ("melpa" . "https://melpa.org/packages/")))
+;  (setq package-archives
+;    '(("elpa"   . "http://elpa.gnu.org/packages/")
+;      ("melpa" . "https://melpa.org/packages/"))
   (package-initialize)
 ;  (package-refresh-contents)
 
