@@ -36,8 +36,8 @@
    "wmk" '(evil-window-up :which-key "window move up")
    "wml" '(evil-window-right :which-key "window move right")
    "ws"  '(:ignore t :which-key "Window Split")
-   "wsv" '(split-window-below :which-key "window split vertical")
-   "wsh" '(split-window-right :which-key "window split horizontal")
+   "wsv" '(split-window-right :which-key "window split vertical")
+   "wsh" '(split-window-below :which-key "window split horizontal")
    "wq" '(evil-quit :which-key "window quit")
 
    "SPC" '(counsel-M-x :which-key "execute command")))
