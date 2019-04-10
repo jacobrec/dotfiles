@@ -182,7 +182,7 @@ bar {
         status_command i3blocks
 }
 bindsym $mod+p exec emacs
-bindsym $mod+b exec google-chrome
+bindsym $mod+b exec chromium
 exec xinput set-prop 13 295 1 # enable touchpad(device 13) tap to click(295) 1 means on
 bindsym $mod+x exec i3lock -e -f -c 28282C # lock screen
 exec setxkbmap -option ctrl:nocaps

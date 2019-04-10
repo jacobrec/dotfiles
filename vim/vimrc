@@ -50,6 +50,7 @@ command W w
 command Wq wq
 command WQ wq
 command Q q
+inoremap jk <Esc>
 " }}}
 " Buffers {{{
 let g:airline#extensions#tabline#enabled = 1 " show buffers at top

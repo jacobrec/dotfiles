@@ -22,8 +22,8 @@
 
 (use-package wakatime-mode
   :ensure t
-  :diminish (wakatime-mode "")
-  :init (global-wakatime-mode))
+  :diminish (wakatime-mode ""))
+  ;:init (global-wakatime-mode))
 
 
 
