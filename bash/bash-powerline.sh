@@ -13,12 +13,13 @@ __powerline() {
     readonly COLOR_FAILURE='\[\033[0;31m\]' # red
 
     readonly SYMBOL_GIT_BRANCH='⎇  '
-    readonly SYMBOL_GIT_MODIFIED='☡ '
+    readonly SYMBOL_GIT_MODIFIED='*'
     readonly SYMBOL_GIT_PUSH='↑'
     readonly SYMBOL_GIT_PULL='↓'
     readonly SYMBOL_GIT_STASH='⛁ '
 
     readonly SERVER="$(whoami)@$(cat /etc/hostname)$COLOR_RESET:"
+    readonly ISJPOWERLINESET="yes"
 
 
     if [[ -z "$PS_SYMBOL" ]]; then
@@ -70,10 +71,11 @@ __powerline() {
     ps1() {
         # Check the exit code of the previous command and display different
         # colors in the prompt accordingly.
-        if [ $? -eq 0 ]; then
+        local s=$?
+        if [ $s -eq 0 ]; then
             local symbol="$COLOR_SUCCESS$PS_SYMBOL $RESET"
         else
-            local symbol="$COLOR_FAILURE|$?| $PS_SYMBOL $RESET" # also show error code $?
+            local symbol="$COLOR_FAILURE|$s| $PS_SYMBOL $RESET" # also show error code $?
         fi
 
         local cwd="$COLOR_CWD\w$RESET"
@@ -96,6 +98,8 @@ __powerline() {
     PROMPT_COMMAND="ps1${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
 }
 
-__powerline
-unset __powerline
+if [[ -z "$ISJPOWERLINESET" ]]; then
+  __powerline
+  unset __powerline
+fi
 
