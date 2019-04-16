@@ -2,7 +2,6 @@ alias ls="ls -v --color"
 alias ranger="source ranger"
 alias background="feh --randomize --bg-fill ~/Pictures/wallpapers/*"
 alias gitlog="git -c core.pager='less -SRF' log --oneline --graph --decorate"
-alias please="sudo zypper"
 
 alias vim="nvim"
 alias ed="emacs -nw"

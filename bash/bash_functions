@@ -21,3 +21,4 @@ screen () {
     feh --randomize --bg-fill ~/Pictures/wallpapers/*
 }
 
+source ~/.please.bash
