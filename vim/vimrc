@@ -5,29 +5,21 @@
 set nocompatible              " be iMproved, required
 let g:tex_flavor = "latex"
 set number
-autocmd BufWritePre * :%s/\s\+$//e
-
+autocmd BufWritePre * :%s/\s\+$//e " remove trailing whitespace
 set backupdir=./.backup,.,/tmp
 set directory=./.backup,/tmp
 " }}}
-" Vundle {{{
+" Plug ins {{{
 " set the runtime path to include Vundle and initialize
-filetype off                  " required, gets turned on later
-set rtp+=~/.vim/bundle/Vundle
-call vundle#begin()
-" let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()
 " }}}
 " Tabs {{{
 set tabstop=4           " How large \t characters show up
 set expandtab           " Tab keystokes become spaces
-set shiftwidth=2        " Indent amount for >>, << and autoindent
+set shiftwidth=4        " Indent amount for >>, << and autoindent
 
 set showtabline=1       " Enum for when to show the tab bar at the top
 " 0 is never, 1 is when there is more then 1 tabs open, and 2 is always
@@ -40,10 +32,6 @@ set hlsearch            " highlight matches when searching
 noremap <F3> :Autoformat<CR>
 
 " Searching
-nnoremap <c-s> :nohlsearch<CR> :write<CR>
-inoremap <c-s> <Esc> :nohlsearch<CR> :write<CR>
-noremap ;; :%s///g<Left><Left><Left>
-
 noremap <TAB> :bn<CR>
 noremap <S-TAB> :bp<CR>
 command W w

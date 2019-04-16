@@ -20,7 +20,6 @@ cd ~
 
 # Move vim folder to home directory
 link $DIR/vim .vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Move bash files to home directory
 cd $DIR/bash
@@ -41,15 +40,9 @@ cd ~
 
 link $DIR/tmux.conf .tmux.conf
 link $DIR/sbclrc .sbclrc
-link $DIR/fish .config/fish
 link $DIR/termite .config/termite
-
-git clone https://github.com/syl20bnr/spacemacs.git .emacs.d/
-cd .emacs.d
-git checkout develop
-cd ~
-link $DIR/spacemacs .spacemacs
-link $DIR/spacemacs-user .spacemacs-user
+link ~/.vim ~/.config/nvim
+link ~/.vim/vimrc ~/.vim/init.vim
 
 
 cd ~
@@ -57,3 +50,7 @@ mkdir -p ~/.config/i3; cd ~/.config/i3
 link $DIR/i3/i3config config
 cd ~/.config
 link $DIR/i3/i3blocks i3blocks
+
+# I always forget this
+git config --global user.name "Jacob Reckhard"
+git config --global user.email "jacobreckhard@gmail.com"

@@ -1,20 +1,10 @@
 #
 # ~/.bash_profile
 #
+
 export PATH="$PATH:~/bin" # Add user bin
 export PATH="$PATH:~/.local/bin" # Add user bin
 export PATH="$PATH:~/.cargo/bin" # Add cargo bin
-
-
-export PATH="$PATH:~/bin" # Add user bin
-export PATH="$PATH:~/.local/bin" # Add user bin
-export PATH="$PATH:~/.npm-global/bin"
-
-
-
-export PATH="$PATH:~/bin" # Add user bin
-export PATH="$PATH:~/.local/bin" # Add user bin
-export PATH="$PATH:~/.npm-global/bin"
 
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
