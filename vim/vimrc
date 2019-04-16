@@ -4,25 +4,24 @@
 " Misc {{{
 set nocompatible              " be iMproved, required
 let g:tex_flavor = "latex"
-set number
 autocmd BufWritePre * :%s/\s\+$//e
 
 set backupdir=./.backup,.,/tmp
 set directory=./.backup,/tmp
 " }}}
-" Vundle {{{
-" set the runtime path to include Vundle and initialize
-filetype off                  " required, gets turned on later
-set rtp+=~/.vim/bundle/Vundle
-call vundle#begin()
-" let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
+" Plugins {{{
+call plug#begin('~/.vim/plugged')
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+Plug 'albfan/ag.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'luochen1990/rainbow'
+
+Plug 'fatih/vim-go'
+
+call plug#end()
 " }}}
 " Tabs {{{
 set tabstop=4           " How large \t characters show up
@@ -36,31 +35,52 @@ set cmdheight=1         " The height of the command bar at the bottom
 
 set hlsearch            " highlight matches when searching
 " }}}
-" Remapings {{{
-noremap <F3> :Autoformat<CR>
+" Remappings {{{
+" Set leader
+nnoremap <SPACE> <Nop>
+map <SPACE> <leader>
 
-" Searching
-nnoremap <c-s> :nohlsearch<CR> :write<CR>
-inoremap <c-s> <Esc> :nohlsearch<CR> :write<CR>
-noremap ;; :%s///g<Left><Left><Left>
-
+" Searching {{{
+nnoremap <leader>sp :Ag!<SPACE>
+nnoremap <leader>ss :AgBuffer!<SPACE>
+" }}}
+" Split management {{{
+nnoremap <leader>wsh :split<CR>
+nnoremap <leader>wsv :vsplit<CR>
+nnoremap <leader>wn <C-W><C-W>
+nnoremap <leader>wiv :resize +5<CR>
+nnoremap <leader>wih :vertical resize +5<CR>
+nnoremap <leader>wdv :resize -5<CR>
+nnoremap <leader>wdh :vertical resize -5<CR>
+" }}}
+" Buffer managment {{{
 noremap <TAB> :bn<CR>
 noremap <S-TAB> :bp<CR>
+" }}}
+" Save and Quit {{{
 command W w
 command Wq wq
 command WQ wq
 command Q q
+" }}}
+
 inoremap jk <Esc>
 " }}}
 " Buffers {{{
 let g:airline#extensions#tabline#enabled = 1 " show buffers at top
 set hidden      " switch buffers when some are unsaved
 " }}}
-" Themes {{{
+" Visual Settings {{{
 syntax on                       " Enable syntax highlighting
 colorscheme onedark             " My colour scheme of choice
 
 let g:airline_theme='bubblegum' " Theme for airline statusbar plugin
+let g:rainbow_active = 1
+let g:indent_guides_enable_on_vim_startup = 1
+
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set list
+set number
 " }}}
 
 " This last line is so this file autofolds when opening
