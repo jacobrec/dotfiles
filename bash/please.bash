@@ -75,7 +75,7 @@ _please_update () {
             sudo pacman -Syu "$@"
             ;;
         "ubuntu")
-            sudo apt-get update && apt-get upgrade
+            sudo apt-get update && sudo apt-get upgrade "$@"
             ;;
         "fedora")
             sudo dnf upgrade "$@"
