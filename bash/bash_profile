@@ -2,9 +2,9 @@
 # ~/.bash_profile
 #
 
-export PATH="$PATH:/home/jacob/bin" # Add user bin
-export PATH="$PATH:/home/jacob/.local/bin" # Add user bin
-export PATH="$PATH:/home/jacob/.cargo/bin" # Add cargo bin
+export PATH="$PATH:$HOME/bin" # Add user bin
+export PATH="$PATH:$HOME/.local/bin" # Add user bin
+export PATH="$PATH:$HOME/.cargo/bin" # Add cargo bin
 
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
