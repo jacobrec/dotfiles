@@ -87,6 +87,9 @@ set hidden      " switch buffers when some are unsaved
 " Visual Settings {{{
 syntax on                       " Enable syntax highlighting
 colorscheme onedark             " My colour scheme of choice
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
 
 let g:airline_theme='bubblegum' " Theme for airline statusbar plugin
 let g:rainbow_active = 1
