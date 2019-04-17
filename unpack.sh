@@ -1,3 +1,4 @@
+#!/bin/bash
 # Get directory unpack.sh is in
 # https://stackoverflow.com/a/246128/1762507
 SOURCE="${BASH_SOURCE[0]}"
@@ -12,9 +13,9 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null && pwd )"
 ##########         Jacob's Dot files           ##########
 ##########    Unpack all my configs script     ##########
 #########################################################
-function link(){
+function link () {
     echo "Linking $1 to location $PWD/$2"
-    ln -f -s -T $1 $2
+    ln -f -s -T "$1" "$2"
 }
 cd ~
 
