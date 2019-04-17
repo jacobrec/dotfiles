@@ -184,7 +184,8 @@ bar {
 bindsym $mod+p exec emacs
 bindsym $mod+b exec firefox
 exec xinput set-prop 13 295 1 # enable touchpad(device 13) tap to click(295) 1 means on
-bindsym $mod+x exec i3lock -e -f -c 28282C # lock screen
+bindsym $mod+x exec xset s activate
+exec --no-startup-id xss-lock -- i3lock -nefc 28282C
 exec setxkbmap -option ctrl:nocaps
 
 # move focused workspace between monitors
