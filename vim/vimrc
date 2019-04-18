@@ -13,16 +13,17 @@ set directory=./.backup,/tmp
 call plug#begin('~/.vim/plugged')
 
 " Visuals
-Plug 'vim-airline/vim-airline'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'luochen1990/rainbow'
-Plug 'https://github.com/joshdick/onedark.vim.git'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline' " status line
+Plug 'nathanaelkane/vim-indent-guides' " Visual indentation
+Plug 'luochen1990/rainbow' " Pretty parenthesis
+Plug 'https://github.com/joshdick/onedark.vim.git' " Color theme
+Plug 'vim-airline/vim-airline-themes' " Status line theme
 
 " Functionality
-Plug 'albfan/ag.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'neomake/neomake'
+Plug 'wakatime/vim-wakatime' " Time tracking
+Plug 'albfan/ag.vim' " Searching
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
+Plug 'neomake/neomake' " Linting
 
 
 " Lang Go
