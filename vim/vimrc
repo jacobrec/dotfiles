@@ -8,25 +8,10 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 set backupdir=./.backup,.,/tmp
 set directory=./.backup,/tmp
-" }}}
-" Plugins {{{
-call plug#begin('~/.vim/plugged')
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'albfan/ag.vim'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'luochen1990/rainbow'
-
-Plug 'fatih/vim-go'
-
-call plug#end()
-" }}}
 " Tabs {{{
 set tabstop=4           " How large \t characters show up
-set expandtab           " Tab keystokes become spaces
 set shiftwidth=4        " Indent amount for >>, << and autoindent
+set expandtab           " Tab keystokes become spaces
 
 set showtabline=1       " Enum for when to show the tab bar at the top
 " 0 is never, 1 is when there is more then 1 tabs open, and 2 is always
@@ -34,6 +19,40 @@ set laststatus=2        " When should the status line be displayed
 set cmdheight=1         " The height of the command bar at the bottom
 
 set hlsearch            " highlight matches when searching
+" }}}
+" Buffers {{{
+set hidden      " switch buffers when some are unsaved
+" }}}
+" }}}
+" Plugins {{{
+" Plugin List {{{
+call plug#begin('~/.vim/plugged')
+" Visuals
+Plug 'vim-airline/vim-airline' " status line
+Plug 'nathanaelkane/vim-indent-guides' " Visual indentation
+Plug 'luochen1990/rainbow' " Pretty parenthesis
+Plug 'https://github.com/joshdick/onedark.vim.git' " Color theme
+Plug 'vim-airline/vim-airline-themes' " Status line theme
+
+" Functionality
+Plug 'wakatime/vim-wakatime' " Time tracking
+Plug 'albfan/ag.vim' " Searching
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
+Plug 'neomake/neomake' " Linting
+
+" Lang Go
+Plug 'fatih/vim-go'
+
+" Lang Javascript
+Plug 'ternjs/tern_for_vim'
+Plug 'carlitux/deoplete-ternjs'
+" npm i -g eslint eslint-plugin-standard eslint-plugin-promise eslint-plugin-node eslint-plugin-json
+call plug#end()
+" }}}
+" Plugin Configs {{{
+let g:deoplete#enable_at_startup = 1
+call neomake#configure#automake('nrwi', 500)
+" }}}
 " }}}
 " Remappings {{{
 " Set leader
@@ -64,16 +83,17 @@ command WQ wq
 command Q q
 " }}}
 
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap jk <Esc>
-" }}}
-" Buffers {{{
-let g:airline#extensions#tabline#enabled = 1 " show buffers at top
-set hidden      " switch buffers when some are unsaved
 " }}}
 " Visual Settings {{{
 syntax on                       " Enable syntax highlighting
 colorscheme onedark             " My colour scheme of choice
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
 
+let g:airline#extensions#tabline#enabled = 1 " show buffers at top
 let g:airline_theme='bubblegum' " Theme for airline statusbar plugin
 let g:rainbow_active = 1
 let g:indent_guides_enable_on_vim_startup = 1
@@ -82,6 +102,7 @@ set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set list
 set number
 " }}}
+
 
 " This last line is so this file autofolds when opening
 " vim:foldmethod=marker:foldlevel=0
