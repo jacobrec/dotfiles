@@ -40,9 +40,10 @@ Plug 'albfan/ag.vim' " Searching
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
 Plug 'neomake/neomake' " Linting
 
+" Lang Lisp
+Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 " Lang Go
 Plug 'fatih/vim-go'
-
 " Lang Javascript
 Plug 'ternjs/tern_for_vim'
 Plug 'carlitux/deoplete-ternjs'
