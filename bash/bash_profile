@@ -5,6 +5,9 @@
 export PATH="$PATH:/home/jacob/bin" # Add user bin
 export PATH="$PATH:/home/jacob/.local/bin" # Add user bin
 export PATH="$PATH:/home/jacob/.cargo/bin" # Add cargo bin
+export PATH="$PATH:/opt/android-studio/bin" # Add android studio bin
+export PATH="$PATH:/opt/dart-sdk/bin" # Add dart bin
+export PATH="$PATH:/opt/flutter/bin" # Add flutter bin
 
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
