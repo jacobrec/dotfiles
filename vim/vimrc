@@ -42,6 +42,7 @@ Plug 'neomake/neomake' " Linting
 
 " Lang Lisp
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+Plug 'jpalardy/vim-slime'
 " Lang Go
 Plug 'fatih/vim-go'
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'go get -u github.com/stamblerre/gocode && make'}
@@ -54,6 +55,7 @@ call plug#end()
 " Plugin Configs {{{
 let g:deoplete#enable_at_startup = 1
 call neomake#configure#automake('nrwi', 500)
+let g:slime_target="neovim"
 " }}}
 " }}}
 " Remappings {{{
@@ -85,8 +87,10 @@ command WQ wq
 command Q q
 " }}}
 
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap jk <Esc>
+tnoremap <Esc> <C-\><C-n>| " Leave terminal mode
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"| " tab to navigate deoplete completion
+inoremap jk <Esc>| " Leave insert mode easier
+command ID :echo b:terminal_job_id
 " }}}
 " Visual Settings {{{
 syntax on                       " Enable syntax highlighting
