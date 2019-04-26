@@ -2,10 +2,10 @@
 # ~/.bash_profile
 #
 
-export PATH="$PATH:/home/jacob/bin" # Add user bin
-export PATH="$PATH:/home/jacob/.local/bin" # Add user bin
-export PATH="$PATH:/home/jacob/.cargo/bin" # Add cargo bin
-export PATH="$PATH:/home/jacob/go/bin" # Add go bin
+export PATH="$PATH:~/bin" # Add user bin
+export PATH="$PATH:~/.local/bin" # Add user bin
+export PATH="$PATH:~/.cargo/bin" # Add cargo bin
+export PATH="$PATH:~/go/bin" # Add go bin
 export PATH="$PATH:/opt/android-studio/bin" # Add android studio bin
 export PATH="$PATH:/opt/dart-sdk/bin" # Add dart bin
 export PATH="$PATH:/opt/flutter/bin" # Add flutter bin

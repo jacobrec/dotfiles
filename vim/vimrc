@@ -13,8 +13,6 @@ set tabstop=4           " How large \t characters show up
 set shiftwidth=4        " Indent amount for >>, << and autoindent
 set expandtab           " Tab keystokes become spaces
 
-set showtabline=1       " Enum for when to show the tab bar at the top
-" 0 is never, 1 is when there is more then 1 tabs open, and 2 is always
 set laststatus=2        " When should the status line be displayed
 set cmdheight=1         " The height of the command bar at the bottom
 
@@ -40,6 +38,8 @@ Plug 'albfan/ag.vim' " Searching
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
 Plug 'neomake/neomake' " Linting
 
+" Lang Dart
+Plug 'dart-lang/dart-vim-plugin'
 " Lang Lisp
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'jpalardy/vim-slime'
@@ -49,6 +49,8 @@ Plug 'deoplete-plugins/deoplete-go', { 'do': 'go get -u github.com/stamblerre/go
 " Lang Javascript
 Plug 'ternjs/tern_for_vim'
 Plug 'carlitux/deoplete-ternjs'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 " npm i -g eslint eslint-plugin-standard eslint-plugin-promise eslint-plugin-node eslint-plugin-json
 call plug#end()
 " }}}
@@ -100,6 +102,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
 
 let g:airline#extensions#tabline#enabled = 1 " show buffers at top
+let g:airline#extensions#tabline#buffer_min_count = 2 " but only show buffers when more then 1
 let g:airline_theme='bubblegum' " Theme for airline statusbar plugin
 let g:rainbow_active = 1
 let g:indent_guides_enable_on_vim_startup = 1
