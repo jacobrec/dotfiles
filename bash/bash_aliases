@@ -7,4 +7,4 @@ alias vim="nvim"
 alias ed="emacs -nw"
 
 alias fin="todo -r"
-alias serve="python -m http.server"
+alias serve="python3 -m http.server"
