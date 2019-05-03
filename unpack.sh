@@ -53,6 +53,10 @@ link $DIR/i3/i3config config
 cd ~/.config
 link $DIR/i3/i3blocks i3blocks
 
-# I always forget this
+# Git stuff
+link $DIR/git/gitignore ~/.gitignore
 git config --global user.name "Jacob Reckhard"
 git config --global user.email "jacobreckhard@gmail.com"
+git config --global core.excludesfile ~/.gitignore
+
+
