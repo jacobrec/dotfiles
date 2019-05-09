@@ -59,4 +59,8 @@ git config --global user.name "Jacob Reckhard"
 git config --global user.email "jacobreckhard@gmail.com"
 git config --global core.excludesfile ~/.gitignore
 
+# Install NVM
+mkdir ~/.nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
 
