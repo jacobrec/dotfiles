@@ -42,8 +42,8 @@ cd ~
 link $DIR/tmux.conf .tmux.conf
 link $DIR/sbclrc .sbclrc
 link $DIR/termite .config/termite
-link ~/.vim ~/.config/nvim
-link ~/.vim/vimrc ~/.vim/init.vim
+ln -s ~/.vim ~/.config/nvim
+ln -s ~/.vim/vimrc ~/.vim/init.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
