@@ -42,8 +42,8 @@ cd ~
 link $DIR/tmux.conf .tmux.conf
 link $DIR/sbclrc .sbclrc
 link $DIR/termite .config/termite
-link ~/.vim ~/.config/nvim
-link ~/.vim/vimrc ~/.vim/init.vim
+ln -s ~/.vim ~/.config/nvim
+ln -s ~/.vim/vimrc ~/.vim/init.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
@@ -59,7 +59,10 @@ git config --global user.name "Jacob Reckhard"
 git config --global user.email "jacobreckhard@gmail.com"
 git config --global core.excludesfile ~/.gitignore
 
+# Install NVM
+mkdir ~/.nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 . ~/.bashrc
 npm i -g eslint standard eslint-standard babel-eslint eslint-plugin-react eslint-config-standard eslint-plugin-import eslint-plugin-standard eslint-plugin-promise eslint-plugin-node eslint-config-standard-jsx
+
 
