@@ -8,3 +8,6 @@ alias ed="emacs -nw"
 
 alias fin="todo -r"
 alias serve="python3 -m http.server"
+alias mirrors="reflector --sort rate --protocol https --fastest 50 --number 100 --save /etc/pacman.d/mirrorlist"
+
+
