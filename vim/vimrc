@@ -29,7 +29,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline' " status line
 Plug 'nathanaelkane/vim-indent-guides' " Visual indentation
 Plug 'luochen1990/rainbow' " Pretty parenthesis
-Plug 'https://github.com/joshdick/onedark.vim.git' " Color theme
+Plug 'KeitaNakamura/neodark.vim' " Color theme
 Plug 'vim-airline/vim-airline-themes' " Status line theme
 
 " Functionality
@@ -45,7 +45,7 @@ Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'jpalardy/vim-slime'
 " Lang Go
 Plug 'fatih/vim-go'
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'go get -u github.com/stamblerre/gocode && make'}
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 " Lang Javascript
 Plug 'ternjs/tern_for_vim'
 Plug 'carlitux/deoplete-ternjs'
@@ -79,6 +79,10 @@ nnoremap <leader>wiv :resize +5<CR>
 nnoremap <leader>wih :vertical resize +5<CR>
 nnoremap <leader>wdv :resize -5<CR>
 nnoremap <leader>wdh :vertical resize -5<CR>
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
 " }}}
 " Buffer managment {{{
 noremap <TAB> :bn<CR>
@@ -98,14 +102,16 @@ command ID :echo b:terminal_job_id
 " }}}
 " Visual Settings {{{
 syntax on                       " Enable syntax highlighting
-colorscheme onedark             " My colour scheme of choice
+colorscheme neodark             " My colour scheme of choice
+let g:neodark#use_256color = 1
+
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
 
 let g:airline#extensions#tabline#enabled = 1 " show buffers at top
 let g:airline#extensions#tabline#buffer_min_count = 2 " but only show buffers when more then 1
-let g:airline_theme='bubblegum' " Theme for airline statusbar plugin
+" let g:airline_theme='bubblegum' " Theme for airline statusbar plugin
 let g:rainbow_active = 1
 let g:indent_guides_enable_on_vim_startup = 1
 

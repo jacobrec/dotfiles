@@ -4,4 +4,5 @@ setlocal expandtab           " Tab keystokes become spaces
 
 let g:deoplete#sources#go#gocode_binary = '~/go/bin/gocode'
 let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
