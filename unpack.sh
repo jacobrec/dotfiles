@@ -40,6 +40,7 @@ cd ~
 
 
 link $DIR/tmux.conf .tmux.conf
+link $DIR/guile .guile
 link $DIR/sbclrc .sbclrc
 link $DIR/termite .config/termite
 ln -s ~/.vim ~/.config/nvim

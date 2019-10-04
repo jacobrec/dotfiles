@@ -182,7 +182,7 @@ bar {
         status_command i3blocks
 }
 bindsym $mod+p exec emacs
-bindsym $mod+b exec firefox
+bindsym $mod+b exec chromium
 exec xinput set-prop 13 295 1 # enable touchpad(device 13) tap to click(295) 1 means on
 bindsym $mod+x exec xset s activate
 exec --no-startup-id xss-lock -- i3lock -nefc 28282C
@@ -195,3 +195,5 @@ bindsym $mod+Ctrl+less move workspace to output left
 # exec xset s activate # Lock screen on login
 
 
+floating_minimum_size 75 x 50
+floating_maximum_size 3000x200

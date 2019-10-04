@@ -6,6 +6,9 @@ set nocompatible              " be iMproved, required
 let g:tex_flavor = "latex"
 autocmd BufWritePre * :%s/\s\+$//e
 
+autocmd BufRead,BufNewFile *.sc set filetype=scheme " scheme filetype
+
+
 set backupdir=./.backup,.,/tmp
 set directory=./.backup,/tmp
 " Tabs {{{
@@ -51,6 +54,8 @@ Plug 'ternjs/tern_for_vim'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'burner/vim-svelte'
+
 " Lang Elm
 Plug 'ElmCast/elm-vim'
 " npm i -g eslint eslint-plugin-standard eslint-plugin-promise eslint-plugin-node eslint-plugin-json
