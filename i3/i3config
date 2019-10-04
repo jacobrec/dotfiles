@@ -196,4 +196,4 @@ bindsym $mod+Ctrl+less move workspace to output left
 
 
 floating_minimum_size 75 x 50
-floating_maximum_size 1000x500
+floating_maximum_size 3000x200

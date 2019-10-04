@@ -4,10 +4,8 @@ alias background="feh --randomize --bg-fill ~/Pictures/wallpapers/*"
 alias gitlog="git -c core.pager='less -SRF' log --oneline --graph --decorate"
 
 alias vim="nvim"
-alias ed="emacs -nw"
+# alias ed="emacs -nw"
 
 alias fin="todo -r"
 alias serve="python3 -m http.server"
-alias mirrors="reflector --sort rate --protocol https --fastest 50 --number 100 --save /etc/pacman.d/mirrorlist"
-
 
