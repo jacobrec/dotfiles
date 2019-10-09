@@ -16,8 +16,8 @@ source ~/.bash_functions
 source ~/.bash-powerline.sh
 source ~/.git-completion.bash
 
-
 export VISUAL="nvim" # vim as default text editor
 export TERM=xterm-color
 set -o vi
 bind -x '"\C-a":"fg"' # Easier fg command
+

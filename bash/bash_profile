@@ -7,6 +7,8 @@ export PATH="$PATH:~/.local/bin" # Add user bin
 export PATH="$PATH:~/.cargo/bin" # Add cargo bin
 export PATH="$PATH:~/go/bin" # Add go bin
 export PATH="$PATH:/opt/android-studio/bin" # Add android studio bin
+export PATH="$PATH:/opt/android-sdk/emulator" # Add android studio bin
+export PATH="$PATH:/opt/android-sdk/tools" # Add android studio bin
 export PATH="$PATH:/opt/dart-sdk/bin" # Add dart bin
 export PATH="$PATH:/opt/flutter/bin" # Add flutter bin
 
