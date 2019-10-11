@@ -2,6 +2,9 @@ LOC=~/.project_data
 function projects () {
     if [ -z $1 ]; then
         projects recent
+    elif [ $1 = "rm" ]; then
+        w=$(cat ~/.project_data | jq "del(.[\"$2\"])")
+        echo $w > $LOC
     elif [ $1 = "set" ]; then
         x=$PWD
         if [ -n "$3" ]; then
