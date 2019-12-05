@@ -1,0 +1,47 @@
+#!/bin/bash
+
+jweather_sync
+
+tmpKelv=$(cat ~/.jacobscommandlineweather.txt | tail -n 1)
+val=$(echo "scale=2;$tmpKelv/100-273.15" | bc)
+
+readonly SYMBOL_WEATHER_SUNNY=' ☀️ '
+readonly SYMBOL_WEATHER_RAINY=' 🌧️ '
+readonly SYMBOL_WEATHER_SNOWY=' 🌨 '
+readonly SYMBOL_WEATHER_STORMY=' ⛈ '
+readonly SYMBOL_WEATHER_OVERCAST=' ☁ '
+readonly SYMBOL_WEATHER_CLOUDY=' ⛅'
+readonly SYMBOL_WEATHER_ERROR_NOINTERNET=' #'
+
+
+local weather=" $SYMBOL_WEATHER_SUNNY"
+weather="$(jweather_read)"
+case $weather in
+    0)
+        jweather=$SYMBOL_WEATHER_SUNNY
+        ;;
+    1)
+        jweather=$SYMBOL_WEATHER_CLOUDY
+        ;;
+    2)
+        jweather=$SYMBOL_WEATHER_OVERCAST
+        ;;
+    3)
+        jweather=$SYMBOL_WEATHER_RAINY
+        ;;
+    4)
+        jweather=$SYMBOL_WEATHER_STORMY
+        ;;
+    5)
+        jweather=$SYMBOL_WEATHER_SNOWY
+        ;;
+    -1)
+        jweather=$SYMBOL_WEATHER_ERROR_NOINTERNET
+        ;;
+esac
+
+if [ -1 = jweather ] || [ 0 = weather ] || [ 0 = $tmpKelv ]; then
+    echo "No Weather"
+else
+    echo "$jweather$val°C"
+fi

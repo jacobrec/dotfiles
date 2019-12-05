@@ -2,10 +2,11 @@ alias ls="ls -v --color"
 alias ranger="source ranger"
 alias background="feh --randomize --bg-fill ~/Pictures/wallpapers/*"
 alias gitlog="git -c core.pager='less -SRF' log --oneline --graph --decorate"
+alias sbcl="rlwrap sbcl"
 
-alias vim="nvim"
+alias vim="nvim -n"
 
-alias fin="todo -r"
+alias fin="todo -t"
 alias serve="python3 -m http.server"
 alias p="projects"
 

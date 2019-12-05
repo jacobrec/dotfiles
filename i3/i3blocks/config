@@ -6,14 +6,9 @@ separator_block_width=25
 markup=none
 
 
-[vpn]
-label=VPN:
-separator=true
-interval=1
-
 [cpu_usage]
 label=
-interval=2
+interval=1
 
 [memory]
 command=/usr/share/i3blocks/memory
@@ -25,6 +20,13 @@ color=#99BBBB
 [disk]
 label=
 instance=/
+interval=30
+separator=true
+color=#ffff00
+
+[disk]
+label=🗎
+instance=/data
 interval=30
 separator=true
 color=#ffff00
@@ -43,10 +45,14 @@ separator=true
 [battery]
 interval=10
 
+# Weather
+[weather]
+interval=300
+
 # Date 
 [date]
 label=
-command=date '+%A, %B %d'
+command=LANG=eo date '+%B %d, %A'
 interval=3600
 
 # Date Time 

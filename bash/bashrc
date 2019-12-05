@@ -21,3 +21,4 @@ export TERM=xterm-color
 set -o vi
 bind -x '"\C-a":"fg"' # Easier fg command
 
+welcome_message

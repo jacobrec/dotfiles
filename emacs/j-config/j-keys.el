@@ -17,7 +17,7 @@
 
    "s"  '(:ignore t :which-key "Search")
    "sp" '(counsel-ag :which-key "search project")
-   "ss" '(swiper :which-key "search project")
+   "ss" '(swiper :which-key "search this file")
 
    "f"  '(:ignore t :which-key "Files")
    "ff" '(counsel-find-file :which-key "file find")

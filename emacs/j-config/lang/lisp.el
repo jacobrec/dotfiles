@@ -28,6 +28,7 @@
     (setq inferior-lisp-program "/usr/bin/sbcl")
     (general-define-key
        :states '(normal visual insert emacs)
+       :keymaps 'lisp-mode
        :prefix "SPC"
        :non-normal-prefix "C-SPC"
        "m"  '(:ignore t :which-key "Mode (Lisp)")
