@@ -36,6 +36,17 @@ awake () {
     done
 }
 
+emacs () {
+    # TODO: make window in correct spot
+    {
+      id=`xdotool getmouselocation --shell | grep WINDOW | grep -Po '\d+'`
+      /usr/bin/emacs "$@" &
+      i3-msg [id=$id] move scratchpad
+      wait
+      i3-msg [id=$id] scratchpad show
+      i3-msg [id=$id] floating toggle
+    } &> /dev/null
+}
 
 source ~/.please.bash
 source ~/.projects.sh
