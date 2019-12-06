@@ -23,17 +23,17 @@
 
 (use-package slime
   :ensure t
+  :defer t
   :config
-  (progn
-    (setq inferior-lisp-program "/usr/bin/sbcl")
-    (general-define-key
-       :states '(normal visual insert emacs)
-       :prefix "SPC"
-       :non-normal-prefix "C-SPC"
-       "m"  '(:ignore t :which-key "Mode (Lisp)")
-       "me"  '(:ignore t :which-key "Eval")
-       "mef" '(slime-eval-defun :which-key "eval function")
-       "mer" '(slime-eval-region :which-key "eval region")
-       "meb" '(slime-eval-buffer :which-key "eval buffer")
-       "mel" '(slime-eval-last-expression :which-key "eval last s-exp"))
-    (slime-setup)))
+  (setq inferior-lisp-program "/usr/bin/sbcl")
+  (slime-setup)
+  (general-define-key
+     :states '(normal visual insert emacs)
+     :prefix "SPC"
+     :non-normal-prefix "C-SPC"
+     "m"  '(:ignore t :which-key "Mode (Lisp)")
+     "me"  '(:ignore t :which-key "Eval")
+     "mef" '(slime-eval-defun :which-key "eval function")
+     "mer" '(slime-eval-region :which-key "eval region")
+     "meb" '(slime-eval-buffer :which-key "eval buffer")
+     "mel" '(slime-eval-last-expression :which-key "eval last s-exp")))

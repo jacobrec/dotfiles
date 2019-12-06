@@ -11,6 +11,7 @@
   (require 'use-package)
 
   (use-package esup
+    :defer t
     :ensure t)
 
 
