@@ -3,6 +3,7 @@ alias ranger="source ranger"
 alias background="feh --randomize --bg-fill ~/Pictures/wallpapers/*"
 alias gitlog="git -c core.pager='less -SRF' log --oneline --graph --decorate"
 alias sbcl="rlwrap sbcl"
+alias ocaml="rlwrap ocaml"
 
 alias vim="nvim -n"
 

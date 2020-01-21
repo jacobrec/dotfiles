@@ -55,6 +55,10 @@ emacs () {
   gui_open /usr/bin/emacs "$@"
 }
 
+search() {
+    pdfgrep -nir "$*" ./*
+};
+
 source ~/.please.bash
 source ~/.projects.sh
 

@@ -7,18 +7,31 @@
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+function setup () {
+    export NVM_DIR="$HOME/.nvm"
 
-source ~/.bash_aliases
-source ~/.bash_functions
-source ~/.bash-powerline.sh
-source ~/.git-completion.bash
+    # NVM is really slow to load, and I almost never need to change node versions
+    # plus, I generally have the latest version installed anyways
+    #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    alias nvm="echo Check bashrc to reenable nvm"
 
-export VISUAL="nvim" # vim as default text editor
-export TERM=xterm-color
-set -o vi
-bind -x '"\C-a":"fg"' # Easier fg command
 
-welcome_message
+    # Ocaml's opam
+    test -r /home/jacob/.opam/opam-init/init.sh && . /home/jacob/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+    eval `opam config env`
+
+    source ~/.bash_aliases
+    source ~/.bash_functions
+    source ~/.bash-powerline.sh
+    source ~/.git-completion.bash
+
+    export VISUAL="nvim" # vim as default text editor
+    export TERM=xterm-color
+    set -o vi
+    bind -x '"\C-a":"fg"' # Easier fg command
+
+    welcome_message
+}
+
+setup

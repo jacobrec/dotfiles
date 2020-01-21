@@ -3,9 +3,13 @@
   :defer t
   :diminish (parinfer-mode . "↯") ; does not display parinfer in the modeline
   :config
-  (progn
-    (setq-default evil-shift-width 2)
-    (setq-default tab-width 2))
+  (setq-default evil-shift-width 2)
+  (setq-default tab-width 2)
+  (general-define-key
+     :states '(normal visual insert emacs)
+     :prefix "SPC"
+     :non-normal-prefix "C-SPC"
+     "mi"  '(parinfer-toggle-mode :which-key "ParInfer Toggle mode"))
   :init
   (progn
     (setq parinfer-extensions
@@ -26,6 +30,7 @@
   :defer t
   :config
   (setq inferior-lisp-program "/usr/bin/sbcl")
+  (setq slime-contribs '(slime-fancy))
   (slime-setup)
   (general-define-key
      :states '(normal visual insert emacs)
