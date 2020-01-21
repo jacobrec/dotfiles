@@ -10,17 +10,12 @@
   (add-to-list 'load-path "~/.emacs.d/use-package/")
   (require 'use-package)
 
-  (use-package esup
-    :defer t
-    :ensure t)
-
-
 
   (add-to-list 'load-path "~/.emacs.d/j-config/")
-  (require 'j-funcs)
-  (require 'j-settings)
-  (require 'j-keys)
-  (require 'j-packages)
+  (require 'funcs)
+  (require 'settings)
+  (require 'keys)
+  (require 'packages)
 
   (load-all-in-directory (concat user-emacs-directory "/j-config/lang"))
   (setf gc-cons-threshold 800000))

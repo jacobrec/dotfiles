@@ -47,4 +47,4 @@
    "SPC" '(counsel-M-x :which-key "execute command")))
 
 
-(provide 'j-keys)
+(provide 'keys)

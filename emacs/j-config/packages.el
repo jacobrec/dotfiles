@@ -76,4 +76,4 @@
    ("C-c /"   . counsel-ag)        ; search for regexp in git repo using ag
    ("C-c l"   . counsel-locate)))   ; search for files or else using locate
 
-(provide 'j-packages)
+(provide 'packages)

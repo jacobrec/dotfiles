@@ -34,4 +34,4 @@
           (push library libraries-loaded))))))
 
 
-(provide 'j-funcs)
+(provide 'funcs)

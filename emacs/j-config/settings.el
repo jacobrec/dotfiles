@@ -35,4 +35,4 @@
 (setq-default tab-width 4)
 
 
-(provide 'j-settings)
+(provide 'settings)
