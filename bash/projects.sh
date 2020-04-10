@@ -12,7 +12,7 @@ function projects () {
         fi
         echo $(cat $LOC | jq ". += {\"$2\": \"$x\"}") > $LOC
     elif [ $1 = "ls" ]; then
-        cat $LOC | jq -C | head -n -1 | tail -n +2 | sed s/\"//g | sed s/,//
+        cat $LOC | jq -C . | head -n -1 | tail -n +2 | sed s/\"//g | sed s/,//
     else
         pushd $PWD > /dev/null
         x=$(cat $LOC | jq -r ".[\"$1\"]")
