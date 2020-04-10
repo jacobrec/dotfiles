@@ -38,8 +38,8 @@ for_window [class="^.*"] border pixel 5
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec dbus-launch termite
-# bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec dbus-launch termite
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -194,6 +194,8 @@ bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
 # exec xset s activate # Lock screen on login
+exec /home/jacob/.xsession
+exec xrandr --dpi 220
 
 
 floating_minimum_size 75 x 50

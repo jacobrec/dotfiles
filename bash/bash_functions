@@ -9,9 +9,9 @@ screen () {
 
 welcome_message () {
     len=`todo -count`
-    if [ $len -gt 0 ]; then
-        todo | sbcl --script ~/docs/Coding/lisp/printbox/main.lisp
-        cat ~/docs/Coding/lisp/printbox/steg.txt
+    if true; then
+        todo | sbcl --script /data/Coding/lisp/printbox/main.lisp
+        cat /data/Coding/lisp/printbox/steg.txt
     else
         printf 'Good work Jacob!\n\nNo tasks todo for now\n' | cowsay -f stegosaurus
     fi

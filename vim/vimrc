@@ -38,28 +38,13 @@ Plug 'vim-airline/vim-airline-themes' " Status line theme
 
 " Functionality
 Plug 'wakatime/vim-wakatime' " Time tracking
-Plug 'albfan/ag.vim' " Searching
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
 Plug 'neomake/neomake' " Linting
 
-" Lang Dart
-Plug 'dart-lang/dart-vim-plugin'
 " Lang Lisp
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'jpalardy/vim-slime'
-Plug 'wlangstroth/vim-racket'
-" Lang Go
-Plug 'fatih/vim-go'
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-" Lang Javascript
-Plug 'ternjs/tern_for_vim'
-Plug 'carlitux/deoplete-ternjs'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'burner/vim-svelte'
 
-" Lang Elm
-Plug 'ElmCast/elm-vim'
 " npm i -g eslint eslint-plugin-standard eslint-plugin-promise eslint-plugin-node eslint-plugin-json
 call plug#end()
 " }}}
@@ -74,10 +59,6 @@ let g:slime_target="neovim"
 nnoremap <SPACE> <Nop>
 map <SPACE> <leader>
 
-" Searching {{{
-nnoremap <leader>sp :Ag!<SPACE>
-nnoremap <leader>ss :AgBuffer!<SPACE>
-" }}}
 " Split management {{{
 nnoremap <leader>wsh :split<CR>
 nnoremap <leader>wsv :vsplit<CR>
@@ -104,7 +85,6 @@ command Q q
 
 tnoremap <Esc> <C-\><C-n>| " Leave terminal mode
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"| " tab to navigate deoplete completion
-inoremap jk <Esc>| " Leave insert mode easier
 command ID :echo b:terminal_job_id
 " }}}
 " Visual Settings {{{
@@ -123,7 +103,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=NONE
 let g:airline#extensions#tabline#enabled = 1 " show buffers at top
 let g:airline#extensions#tabline#buffer_min_count = 2 " but only show buffers when more then 1
 let g:airline_theme='minimalist' " Theme for airline statusbar plugin
-let g:rainbow_active = 1
+let g:rainbow_active=1
 let g:indent_guides_enable_on_vim_startup = 1
 
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·

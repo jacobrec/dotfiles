@@ -39,6 +39,7 @@ cd ~
 
 
 
+link $DIR/emacs/ .emacs.d
 link $DIR/tmux.conf .tmux.conf
 link $DIR/guile .guile
 link $DIR/sbclrc .sbclrc

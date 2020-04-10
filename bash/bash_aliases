@@ -7,7 +7,7 @@ alias ocaml="rlwrap ocaml"
 
 alias vim="nvim -n"
 
-alias fin="todo -t"
+alias todo="guile /data/Coding/guile/jtodo/main.scm"
 alias serve="python3 -m http.server"
 alias p="projects"
 

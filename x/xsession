@@ -1,0 +1,3 @@
+xrdb -merge ~/.XResources
+setxkbmap us -option ctrl:nocaps # disable capslock key
+xset b off # turn off bell sound
