@@ -17,6 +17,10 @@ function link () {
     echo "Linking $1 to location $PWD/$2"
     ln -f -s -T "$1" "$2"
 }
+
+cd $DIR
+git pull --recurse-submodules
+
 cd ~
 
 # Move vim folder to home directory
@@ -39,7 +43,11 @@ cd ~
 
 
 
+cd $DIR/emacs
+git clone https://github.com/jwiegley/use-package.git
+cd ~
 link $DIR/emacs/ .emacs.d
+
 link $DIR/tmux.conf .tmux.conf
 link $DIR/guile .guile
 link $DIR/sbclrc .sbclrc

@@ -4,8 +4,8 @@
   (setq package-archives
    '(("elpa"   . "http://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")))
-  ; (package-initialize)
-  (package-refresh-contents)
+  (package-initialize)
+  ; (package-refresh-contents)
 
   (add-to-list 'load-path "~/.emacs.d/use-package/")
   (require 'use-package)
