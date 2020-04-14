@@ -56,6 +56,9 @@ ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vim/vimrc ~/.vim/init.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+cd ~
+mkdir -p ~/config/alacritty
+link $DIR/alacritty.yml ~/config/alacritty/alacritty.yml
 
 cd ~
 mkdir -p ~/.config/i3; cd ~/.config/i3

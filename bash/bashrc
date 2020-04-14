@@ -12,9 +12,9 @@ function setup () {
 
     # NVM is really slow to load, and I almost never need to change node versions
     # plus, I generally have the latest version installed anyways
-    #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-    alias nvm="echo Check bashrc to reenable nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    #alias nvm="echo Check bashrc to reenable nvm"
 
 
     # Ocaml's opam

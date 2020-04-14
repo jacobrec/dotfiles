@@ -7,6 +7,13 @@ screen () {
     feh --randomize --bg-fill ~/Pictures/wallpapers/*
 }
 
+home () {
+    xrandr --auto;
+    xrandr --output DP-1 --auto;
+    xrandr --output eDP-1 --auto;
+    xrandr --output eDP-1 --right-of DP-1
+}
+
 welcome_message () {
     len=`todo -count`
     if true; then
