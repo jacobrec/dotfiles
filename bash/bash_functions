@@ -9,9 +9,10 @@ screen () {
 
 home () {
     xrandr --auto;
-    xrandr --output DP-1 --auto;
-    xrandr --output eDP-1 --auto;
-    xrandr --output eDP-1 --right-of DP-1
+    xrandr --output DP1 --auto;
+    xrandr --output eDP1 --auto;
+    xrandr --output eDP1 --left-of DP1
+    feh --randomize --bg-fill ~/Pictures/wallpapers/*
 }
 
 welcome_message () {
@@ -63,7 +64,8 @@ emacs () {
 }
 
 search() {
-    pdfgrep -nir "$*" ./*
+    # pdfgrep -nir "$*" ./*
+    find . -type f -iname '*.pdf' -exec pdfgrep "$*" -in {} +
 };
 
 source ~/.please.bash
