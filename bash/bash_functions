@@ -18,7 +18,7 @@ home () {
 welcome_message () {
     len=`todo -count`
     if true; then
-        todo | sbcl --script /data/Coding/lisp/printbox/main.lisp
+        todo | /bin/sbcl --script /data/Coding/lisp/printbox/main.lisp
         cat /data/Coding/lisp/printbox/steg.txt
     else
         printf 'Good work Jacob!\n\nNo tasks todo for now\n' | cowsay -f stegosaurus
@@ -60,7 +60,8 @@ gui_open () {
 }
 
 emacs () {
-  gui_open /usr/bin/emacs "$@"
+
+  ([[ -n $DISPLAY && $XDG_VTNR -eq 1 ]] && gui_open /usr/bin/emacs "$@") || /usr/bin/emacs "$@"
 }
 
 search() {

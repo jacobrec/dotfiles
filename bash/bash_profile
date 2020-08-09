@@ -6,11 +6,13 @@ export PATH="$PATH:/home/jacob/bin" # Add user bin
 export PATH="$PATH:/home/jacob/.local/bin" # Add user bin
 export PATH="$PATH:/home/jacob/.cargo/bin" # Add cargo bin
 export PATH="$PATH:/home/jacob/go/bin" # Add go bin
+export PATH="$PATH:/home/jacob/.gem/ruby/2.7.0/bin" # Add ruby bin
 export PATH="$PATH:/opt/android-studio/bin" # Add android studio bin
 export PATH="$PATH:/opt/android-sdk/emulator" # Add android studio bin
 export PATH="$PATH:/opt/android-sdk/tools" # Add android studio bin
 export PATH="$PATH:/opt/dart-sdk/bin" # Add dart bin
 export PATH="$PATH:/opt/flutter/bin" # Add flutter bin
+export PATH="$PATH:/opt/wonderdraft/bin" # Add wonderdraft
 
 export ARDUINO_DIR=''
 export ARDMK_DIR='/usr/share/arduino'
