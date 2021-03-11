@@ -22,7 +22,7 @@ my $percent;
 my $ac_adapt;
 my $full_text;
 my $short_text;
-my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
+my $bat_number = $ENV{BLOCK_INSTANCE} || 1;
 
 my $status_chr = '';
 my $status_bat = '';

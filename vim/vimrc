@@ -10,8 +10,8 @@ autocmd BufRead,BufNewFile *.sc  set filetype=scheme
 autocmd BufRead,BufNewFile *.asd set filetype=lisp
 
 
-set backupdir=./.backup,.,/tmp
-set directory=./.backup,/tmp
+set backupdir=~/.backup
+set directory=~/.backup
 " Tabs {{{
 set tabstop=4           " How large \t characters show up
 set shiftwidth=4        " Indent amount for >>, << and autoindent

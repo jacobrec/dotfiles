@@ -3,6 +3,8 @@
   '(*default-pathname-defaults*
     #p"/home/jacob/docs/Coding/lisp/"))
 
+(defvar *swankpath* "~/.emacs.d/elpa/slime-20200414.1444/start-swank.lisp")
+
 ;;; The following lines added by ql:add-to-init-file:
 #-quicklisp
 (let ((quicklisp-init (merge-pathnames "quicklisp/setup.lisp"

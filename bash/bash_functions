@@ -1,12 +1,3 @@
-screen () {
-    xrandr --auto;
-    xrandr --output DP-1-1-2 --auto;
-    xrandr --output DP-1-2-2 --auto;
-    xrandr --output DP-1-2-2 --right-of eDP-1-1;
-    xrandr --output DP-1-1-2 --left-of eDP-1-1;
-    feh --randomize --bg-fill ~/Pictures/wallpapers/*
-}
-
 home () {
     xrandr --auto;
     xrandr --output DP1 --auto;
@@ -15,14 +6,23 @@ home () {
     feh --randomize --bg-fill ~/Pictures/wallpapers/*
 }
 
+game () {
+    xrandr --auto;
+    xrandr --output DP1 --auto;
+    xrandr --output eDP1 --off;
+    feh --randomize --bg-fill ~/Pictures/wallpapers/*
+}
+
+laptop () {
+    xrandr --auto;
+    xrandr --output eDP1 --auto;
+    xrandr --output DP1 --off;
+    feh --randomize --bg-fill ~/Pictures/wallpapers/*
+}
+
 welcome_message () {
-    len=`todo -count`
-    if true; then
-        todo | /bin/sbcl --script /data/Coding/lisp/printbox/main.lisp
+        jlife
         cat /data/Coding/lisp/printbox/steg.txt
-    else
-        printf 'Good work Jacob!\n\nNo tasks todo for now\n' | cowsay -f stegosaurus
-    fi
 }
 
 pcode () {

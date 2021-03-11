@@ -13,6 +13,8 @@ export PATH="$PATH:/opt/android-sdk/tools" # Add android studio bin
 export PATH="$PATH:/opt/dart-sdk/bin" # Add dart bin
 export PATH="$PATH:/opt/flutter/bin" # Add flutter bin
 export PATH="$PATH:/opt/wonderdraft/bin" # Add wonderdraft
+export PATH="$PATH:/home/jacob/.emacs.d/bin" # Add emacs bin
+export PATH="$HOME/.steam/root/steamapps/common/Stardew Valley:$PATH"
 
 export ARDUINO_DIR=''
 export ARDMK_DIR='/usr/share/arduino'

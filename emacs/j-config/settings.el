@@ -29,10 +29,27 @@
 (global-linum-mode t) ; line numbers
 (show-paren-mode 1) ; show matching parenthesis
 (setq whitespace-line-column 220); column width before emacs gets mad
-(global-whitespace-mode) ;; show whitespace
+(if (display-graphic-p)     ;; only in gui mode
+  (global-whitespace-mode)) ;; show whitespace
+
 
 (setq-default indent-tabs-mode nil) ;; no tabs
 (setq-default tab-width 4)
 
+(setq org-confirm-babel-evaluate nil) ; stop asking if I actually want to run it
+(org-babel-do-load-languages
+  'org-babel-load-languages ; org-babel language list
+    '((python . t)
+      (plantuml . t)
+      (dot . t)))
+(add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
+(setq org-plantuml-jar-path (expand-file-name "/usr/share/java/plantuml/plantuml.jar"))
+(defun my/fix-inline-images ()
+  (when org-inline-image-overlays
+    (org-redisplay-inline-images)))
+
+(add-hook 'org-babel-after-execute-hook 'my/fix-inline-images)
+
+(setq create-lockfiles nil) ; no lockfiles. This kills react
 
 (provide 'settings)

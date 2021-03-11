@@ -4,7 +4,8 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+# [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+mkdir -p /tmp/jacob
 
 
 function setup () {
@@ -18,20 +19,21 @@ function setup () {
 
 
     # Ocaml's opam
-    # test -r /home/jacob/.opam/opam-init/init.sh && . /home/jacob/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-    # eval `opam config env`
+    test -r /home/jacob/.opam/opam-init/init.sh && . /home/jacob/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+    eval `opam config env`
 
     source ~/.bash_aliases
     source ~/.bash_functions
     source ~/.bash-powerline.sh
     source ~/.git-completion.bash
 
-    export VISUAL="nvim" # vim as default text editor
+    export VISUAL="vim" # vim as default text editor
     export TERM=xterm-color
     set -o vi
     bind -x '"\C-a":"fg"' # Easier fg command
 
     export GUILE_LOAD_PATH="/data/Coding/guile/"
+    export GO111MODULE="auto"
 
     welcome_message
 }

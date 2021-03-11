@@ -7,7 +7,11 @@ alias ocaml="rlwrap ocaml"
 
 alias vim="nvim -n"
 
+alias jlife="guile /data/Coding/guile/jlife/cli.scm"
 alias todo="guile /data/Coding/guile/jtodo/main.scm"
 alias serve="python3 -m http.server"
 alias p="projects"
+#alias oblivion="WINEPREFIX=/home/jacob/.local/share/Steam/steamapps/compatdata/22330/pfx wine /home/jacob/.steam/steam/steamapps/common/Oblivion/Oblivion.exe"
+#alias oblivion="STEAM_COMPAT_DATA_PATH=~/.proton/ ~/.steam/steam/steamapps/common/Proton\ 4.11/proton run /home/jacob/.steam/steam/steamapps/common/Oblivion/Oblivion.exe"
+alias oblivion="STEAM_COMPAT_DATA_PATH=/home/jacob/.local/share/Steam/steamapps/compatdata/22330/ ~/.steam/steam/steamapps/common/Proton\ 5.13/proton run /home/jacob/.steam/steam/steamapps/common/Oblivion/Oblivion.exe"
 

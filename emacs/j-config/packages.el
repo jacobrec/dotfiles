@@ -32,6 +32,7 @@
   :diminish (flycheck-mode . "f")
   :init (global-flycheck-mode))
 
+
 (use-package doom-themes
   :ensure t
   :init
@@ -75,5 +76,8 @@
    ("C-c s"   . counsel-git-grep)  ; search for regexp in git repo
    ("C-c /"   . counsel-ag)        ; search for regexp in git repo using ag
    ("C-c l"   . counsel-locate)))   ; search for files or else using locate
+
+(use-package lsp-mode
+  :ensure t)
 
 (provide 'packages)

@@ -1,2 +1,12 @@
-udiskie -sN &
-exec i3
+xrdb -merge ~/.XResources
+setxkbmap -option caps:escape
+xset b off # turn off bell sound
+
+case "$1" in
+    gnome)
+        exec gnome-session
+        ;;
+    *)
+        exec i3
+        ;;
+esac

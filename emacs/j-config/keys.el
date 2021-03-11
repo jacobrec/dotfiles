@@ -46,5 +46,6 @@
 
    "SPC" '(counsel-M-x :which-key "execute command")))
 
-
+(global-set-key (kbd "<mouse-6>") (lambda () (interactive) (scroll-right 6)))
+(global-set-key (kbd "<mouse-7>") (lambda () (interactive) (scroll-left 6)))
 (provide 'keys)

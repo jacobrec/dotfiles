@@ -42,3 +42,5 @@
      "mer" '(slime-eval-region :which-key "eval region")
      "meb" '(slime-eval-buffer :which-key "eval buffer")
      "mel" '(slime-eval-last-expression :which-key "eval last s-exp")))
+
+(add-to-list 'auto-mode-alist '("\\.jsp\\'" . lisp-mode))

@@ -19,3 +19,21 @@
 
   (load-all-in-directory (concat user-emacs-directory "/j-config/lang"))
   (setf gc-cons-threshold 800000))
+;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
+(require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
+;; ## end of OPAM user-setup addition for emacs / base ## keep this line
+
+
+;; remove later
+(eval-when-compile (require 'cl-lib))
+(defun nadvice/linum-update-window (old-fun &rest args)
+  (cl-letf* ((old-count-lines (symbol-function #'count-lines))
+             ((symbol-function #'count-lines)
+              (lambda (&rest args) (1- (apply old-count-lines args)))))
+    (apply old-fun args)))
+
+(defun linum-toggle-zero-indexing ()
+  (interactive)
+  (if (advice-member-p #'nadvice/linum-update-window 'linum-update-window)
+      (advice-remove 'linum-update-window #'nadvice/linum-update-window)
+    (advice-add 'linum-update-window :around #'nadvice/linum-update-window)))
