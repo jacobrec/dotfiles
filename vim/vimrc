@@ -38,20 +38,13 @@ Plug 'vim-airline/vim-airline-themes' " Status line theme
 
 " Functionality
 Plug 'wakatime/vim-wakatime' " Time tracking
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
-Plug 'neomake/neomake' " Linting
 
 " Lang Lisp
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
-Plug 'jpalardy/vim-slime'
 
-" npm i -g eslint eslint-plugin-standard eslint-plugin-promise eslint-plugin-node eslint-plugin-json
 call plug#end()
 " }}}
 " Plugin Configs {{{
-let g:deoplete#enable_at_startup = 1
-call neomake#configure#automake('nrwi', 500)
-let g:slime_target="neovim"
 " }}}
 " }}}
 " Remappings {{{
